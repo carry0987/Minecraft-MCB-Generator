@@ -1,0 +1,297 @@
+#mainWrap {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background: gray;
+    overflow: hidden;
+}
+
+#commandText {
+    overflow: hidden;
+}
+
+#generatedCode {
+    width: 100%;
+    height: 100%;
+    word-break: word;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#input {
+    height: 24px;
+    background: white;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+
+.m0_inputInnerLeft {
+    height: 100%;
+    width: 220px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.m0_inputInnerMid {
+    height: 100%;
+    width: 100%;
+    padding-left: 205px;
+    padding-right: 190px;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    float: left;
+}
+
+.m1_inputInnerLeftMid {
+    height: 100%;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 190px;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    position: absolute;
+    float: left;
+}
+
+.m2_inputInnerLeft {
+    height: 100%;
+    width: 340px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.m2_inputInnerMid {
+    height: 100%;
+    width: 100%;
+    padding-left: 340px;
+    padding-right: 190px;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    float: left;
+}
+
+.m3_inputInnerLeft {
+    height: 100%;
+    width: 425px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.m3_inputInnerMid {
+    height: 100%;
+    width: 100%;
+    padding-left: 425px;
+    padding-right: 190px;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+    float: left;
+}
+
+.inputInnerright {
+    height: 100%;
+    width: 190px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#output {
+    height: 100%;
+    width: 100%;
+    padding-bottom: 25px;
+    position: absolute;
+    top: 0px;
+    overflow: auto;
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    /* Opera/IE 8+ */
+}
+
+#outputInner {
+    width: 100%;
+    height: 100%;
+    background: #777;
+}
+
+#displayInput {
+    width: 100%;
+    height: 70%;
+    background: #777;
+    overflow: auto;
+}
+
+#displayOutput {
+    width: 100%;
+    height: 30%;
+    background: #999;
+    overflow: auto;
+}
+
+/*for input area*/
+.posInput {
+    width: 40px;
+    height: 20px;
+}
+
+.idMetaInput {
+    width: 30px;
+    height: 20px;
+}
+
+.nbtTagInput {
+    width: 100%;
+    height: 20px;
+}
+
+.rawCommandInput {
+    width: 100%;
+    height: 20px;
+}
+
+.prefixInput {
+    width: 120px;
+    height: 20px;
+}
+
+.suffixInput {
+    width: 100%;
+    height: 20px;
+}
+
+.spaceInput {
+    width: 25px;
+    height: 20px;
+}
+
+.notEnabled {
+    color: #CCCCCC;
+}
+
+.badFormat {
+    color: red;
+}
+
+.inputBox {
+    float: left;
+    padding: 0;
+    border-width: 1px;
+    margin: 1px;
+}
+
+.leftButton {
+    float: right;
+    width: 80px;
+    padding: 0px;
+    height: 20px;
+    border-width: 1px;
+    margin: 1px;
+}
+
+.miniButton {
+    float: right;
+    width: 20px;
+    padding: 0px;
+    height: 20px;
+    border-width: 1px;
+    margin: 1px;
+}
+
+/*for input area end*/
+.blockSet {
+    width: 100%;
+    height: 30px;
+    background: #aaa;
+    float: right;
+    border-bottom-style: solid;
+    border-width: 1px;
+    overflow: auto;
+    cursor: default;
+    -moz-user-select: none;
+    /* for Firefox */
+    -webkit-user-select: none;
+    /* for Chrome */
+}
+
+.blockSetCollection {
+    width: 100%;
+    height: 30px;
+    background: #aaf;
+    float: right;
+    border-bottom-style: solid;
+    border-width: 1px;
+    overflow: auto;
+    cursor: default;
+    -moz-user-select: none;
+    /* for Firefox */
+    -webkit-user-select: none;
+    /* for Chrome */
+}
+
+.blockSetCollectionHigh {
+    width: 100%;
+    height: 60px;
+    background: #aaf;
+    float: right;
+    border-bottom-style: solid;
+    border-width: 1px;
+    overflow: auto;
+    cursor: default;
+    -moz-user-select: none;
+    /* for Firefox */
+    -webkit-user-select: none;
+    /* for Chrome */
+}
+
+input {
+    border-radius: 4px;
+}
+
+/*inputmode switch*/
+.inputMode0 {}
+
+.inputMode1 {}
+
+.inputMode2 {}
+
+.inputMode3 {}
+
+.inputMode0_display {}
+
+.inputMode1_display {}
+
+.inputMode2_display {}
+
+.inputMode3_display {}
+
+input {
+    vertical-align: middle;
+}
+
+div {
+    vertical-align: middle;
+}
