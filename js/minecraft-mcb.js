@@ -511,7 +511,6 @@ function addBlockListenerAdapter() {
     return inputModeList[currentInputMode].addBlockListener();
 }
 
-
 //Logic
 function getSetBlockCommand(x, y, z, id, meta, nbt) {
     var command;
@@ -1039,6 +1038,16 @@ var init = function() {
 
 //Main
 init();
+
+//Set value via localStorage
+function setValue(item, value) {
+    window.localStorage[item] = (typeof value === 'string') ? value : JSON.stringify(value);
+}
+
+//Get value via localStorage
+function getValue(item, toJSON) {
+    return (window.localStorage[item]) ? ((toJSON) ? JSON.parse(window.localStorage[item]) : window.localStorage[item]) : null;
+}
 
 //IE Fix
 if (!Array.prototype.indexOf) {
