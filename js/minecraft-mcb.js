@@ -522,7 +522,7 @@ function getSetBlockCommand(x, y, z, id, meta, nbt) {
     if (nbt) {
         command = command + " " + nbt;
     } else if (!nbt) {
-        command = command + " replace ";
+        command = command + " replace";
     }
     return command;
 }
