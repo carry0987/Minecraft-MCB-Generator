@@ -43,7 +43,7 @@ inputBoxInfo[0].inputBoxFormat = {
     m0_x: /(~?-?\d+|~)/g,
     m0_y: /(~?-?\d+|~)/g,
     m0_z: /(~?-?\d+|~)/g,
-    m0_id: /[\w:]+/g,
+    m0_id: /[\w:\=\[\]\{\}]+/g,
     m0_meta: /\d+/g,
     m0_nbtTag: /.+/g
 };
@@ -123,7 +123,7 @@ inputBoxInfo[2].inputBoxFormat = {
     m2_x1: /(~?-?\d+|~)/g,
     m2_y1: /(~?-?\d+|~)/g,
     m2_z1: /(~?-?\d+|~)/g,
-    m2_id: /[\w:]+/g,
+    m2_id: /[\w:\=\[\]\{\}]+/g,
     m2_meta: /\d+/g,
     m2_nbtTag: /.+/g
 };
@@ -430,8 +430,12 @@ function addBlockCollectionHigh(id, inf) {
 //Command List
 function appendCommand(command) {
     var id = (new Date()).getTime();
+    var storageInfo = getValue("MCB", true);
+    storageInfo = (storageInfo == null) ? {} : storageInfo;
     commandList[id] = command;
     addBlock(id, command);
+    storageInfo[id] = command;
+    setValue("MCB", storageInfo);
 }
 
 function appendCommandCollection(command, display) {
