@@ -436,6 +436,9 @@ function appendCommand(command) {
     addBlock(id, command);
     storageInfo[id] = command;
     setValue("MCB", storageInfo);
+    for (var key in storageInfo) {
+        console.log("key " + key + " has value " + storageInfo[key]);
+    }
 }
 
 function appendCommandCollection(command, display) {
