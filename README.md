@@ -1,2 +1,2 @@
-# Minecraft-AutoBuild-Tunnel
-Use Command Block Minecart to automatically build tunnel
+# Minecraft-MCB-Generator
+Generate MCB (Minecart with Command Block) with nested command
