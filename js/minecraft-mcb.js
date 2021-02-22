@@ -1,4 +1,4 @@
-//field
+//Field
 var currentInputMode = 0;
 var inputModeCount = 4;
 var inputBoxInfo = [];
@@ -189,17 +189,14 @@ inputBoxInfo[3].inputBoxFormat = {
     m3_suffix: /.+/g
 };
 
-//command list
-
+//Command List
 var commandList = {};
 var commandCollectionList = {};
 
-//input mode list
-
+//Input mode list
 var inputModeList = [];
 
-//input mode 0
-
+//Input mode 0
 inputModeList[0] = {};
 inputModeList[0].addBlockListener = function() {
     if (finalCheck()) {
@@ -220,8 +217,7 @@ inputModeList[0].getCurrentInput = function() {
     return getSetBlockCommand(x, y, z, id, meta, nbt);
 };
 
-//input mode 1
-
+//Input mode 1
 inputModeList[1] = {};
 inputModeList[1].addBlockListener = function() {
     if (finalCheck(".inputMode1")) {
@@ -237,8 +233,7 @@ inputModeList[1].getCurrentInput = function() {
     return command;
 };
 
-//input mode 2
-
+//Input mode 2
 inputModeList[2] = {};
 inputModeList[2].addBlockListener = function() {
     if (finalCheck() && inputModeList[2].additionCheck()) {
@@ -285,7 +280,6 @@ inputModeList[2].additionCheck = function() {
         $("#m2_z1").addClass("badFormat");
     }
     return isCorrect;
-
 };
 inputModeList[2].getTitle = function() {
     var x0 = getSingleInput("m2_x0");
@@ -309,8 +303,7 @@ inputModeList[2].getTitle = function() {
     return title;
 };
 
-//input mode 3
-
+//Input mode 3
 inputModeList[3] = {};
 inputModeList[3].addBlockListener = function() {
     if (finalCheck() && inputModeList[3].additionCheck()) {
@@ -357,7 +350,6 @@ inputModeList[3].additionCheck = function() {
         $("#m3_z1").addClass("badFormat");
     }
     return isCorrect;
-
 };
 inputModeList[3].getTitle = function() {
     var prefix = getSingleInput("m3_prefix");
@@ -382,8 +374,7 @@ inputModeList[3].getTitle = function() {
     return title;
 };
 
-//display block control
-
+//Display Block Control
 function addBlock(id, inf) {
     $("<div></div>")
         .attr("id", id)
@@ -399,7 +390,7 @@ function addBlock(id, inf) {
         .hide()
         .appendTo("#displayInput")
         .slideDown(200);
-    $("#displayInput").animate({scrollTop: $("#"+id).offset().top}, 300);
+    $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 300);
 }
 
 function addBlockCollection(id, inf) {
@@ -436,8 +427,7 @@ function addBlockCollectionHigh(id, inf) {
         .slideDown(200);
 }
 
-//command list
-
+//Command List
 function appendCommand(command) {
     var id = (new Date()).getTime();
     commandList[id] = command;
@@ -455,8 +445,7 @@ function appendCommandCollectionHigh(id, command, display) {
     addBlockCollection(id, display);
 }
 
-//element search
-
+//Search Element
 function getSingleInput(id) {
 
     if (inputBoxInfo[currentInputMode].isInputBoxEnabled[id] === false) {
@@ -469,8 +458,7 @@ function getSingleInput(id) {
     return content;
 }
 
-//inputbox control
-
+//InputBox control
 function inputBoxCheck(element) {
     if (element.value === "") {
         inputBoxDisable(element);
@@ -518,47 +506,46 @@ function finalCheck() {
     return isCorrrect;
 }
 
-//input mode adapter
-
+//Input mode adapter
 function addBlockListenerAdapter() {
     return inputModeList[currentInputMode].addBlockListener();
 }
 
 
-//logic
-
+//Logic
 function getSetBlockCommand(x, y, z, id, meta, nbt) {
     var command;
     meta = meta || "0";
 
-    command = "setblock " + '~'+x + " ~" + y + " ~" + z + " minecraft:" + id;
+    command = "setblock " + '~' + x + " ~" + y + " ~" + z + " minecraft:" + id;
     if (nbt || (meta !== "0")) {
         command = command + " " + meta;
     }
     if (nbt) {
-        command = command + " replace " + nbt;
+        command = command + " " + nbt;
     }
     return command;
 }
 
 function generateCommandFinal(commandList) {
     if (!commandList[0]) {
-        return "no Input!"
+        return "No Input!"
     }
     setBlockReorder(commandList);
     var command = "/summon command_block_minecart ~-2 ~ ~ " + _tagBuilder(commandList);
     return command;
 }
 
-function _tagBuilder(_commandList, current) {
+function _tagBuilder(_commandList, current, addComma = false) {
     var buffer;
     var Listlength = _commandList.length;
+    var insertComma = (addComma == true) ? "," : "";
     if (Listlength == 1) {
-        buffer = ",Command:\"" + _commandList[0].replace(/(\"|\\)/g, "\\\"") + " replace\"";
+        buffer = insertComma + "Command:\"" + _commandList[0].replace(/(\"|\\)/g, "\\\"") + " replace\"";
         if (current) {
             buffer = "Passengers:\[" + current + "\]" + buffer;
         }
-        buffer = "{" + buffer + "}";
+        buffer = "{" + buffer + ",Motion:\[0.0,0.0,0.1\]}";
         return buffer;
     } else {
         buffer = "id:\"command_block_minecart\"";
@@ -567,7 +554,7 @@ function _tagBuilder(_commandList, current) {
             buffer = buffer + ",Passengers:\[" + current + "\]";
         }
         buffer = "{" + buffer + "}";
-        return _tagBuilder(_commandList.slice(1), buffer);
+        return _tagBuilder(_commandList.slice(1), buffer, true);
     }
 }
 
@@ -715,7 +702,6 @@ function getMultiRawCommand(x0, y0, z0, x1, y1, z1, prefix, space, suffix) {
     return tempCommandList;
 }
 
-
 function setBlockReorder(commandList) {
     var setBlockFormat = /(\/?setblock) (~?-?\d+|~) (~?-?\d+|~) (~?-?\d+|~) ([\w\d:]+)( \d+)?( replace| keep| destroy)?( [^\n\r]+)?/g;
     var lastBlock = ["26", "27", "28", "29", "31", "32", "33", "37", "38", "39", "40", "51", "55", "59", "63", "65", "66", "69", "70", "72", "75", "76", "77", "78", "96", "104", "105", "106", "111", "115", "127", "131", "141", "142", "143", "147", "148", "149", "150", "157", "171", "175"];
@@ -814,6 +800,7 @@ function ParsedSetBlockCommand(str) {
     this.method = tempArray[7] ? tempArray[7].substring(1) : "";
     this.nbt = tempArray[8] ? tempArray[8].substring(1) : "";
 }
+
 var ParsedPosition = function ParsedPosition(posX, posY, posZ) {
     this.isXRelative = isRelative(posX);
     this.isYRelative = isRelative(posY);
@@ -822,10 +809,12 @@ var ParsedPosition = function ParsedPosition(posX, posY, posZ) {
     this.y = parsePos(posY);
     this.z = parsePos(posZ);
 }
+
 ParsedPosition.prototype.equalTo = function(obj) {
     if (!(obj instanceof ParsedPosition)) { return false }
     return ((this.x === obj.x) && (this.y === obj.y) && (this.z === obj.z) && (this.isXRelative === obj.isXRelative) && (this.isYRelative === obj.isYRelative) && (this.isZRelative === obj.isZRelative));
 }
+
 var reoderWithProperty = function reoderWithProperty(objList, attr, method) { //method could be "increase" or "decrease" ,attr is a list of property name
     if (typeof(attr) === "undefined") { throw new Error("property undefined"); }
     if (!(method === "increase" || method === "decrease")) { throw new Error("undefined method"); }
@@ -861,6 +850,7 @@ var reoderWithProperty = function reoderWithProperty(objList, attr, method) { //
     }
     return objList;
 }
+
 /*
  * parameter : 
  *     objList : the object you want to split
@@ -928,8 +918,7 @@ var splitWithProperty = function splitWithProperty(objectList, propertyList, mat
 }
 
 
-//input mode switch
-
+//Switch input mode
 function switchMode() {
     var current = currentInputMode;
     var next = (current + 1) % inputModeCount;
@@ -943,8 +932,7 @@ function switchMode() {
     resetInput();
 }
 
-//final generate
-
+//Final generate
 function getAllCommand() {
     var i = 0;
     var allCommand = []; {
@@ -962,8 +950,7 @@ function getFinalCommand() {
     return generateCommandFinal(getAllCommand());
 }
 
-//listener
-
+//Listener
 function onClickAddBlock() {
     addBlockListenerAdapter();
 }
@@ -1015,8 +1002,8 @@ function onClickGenerate() {
 function onClickSwitchMode() {
     switchMode();
 }
-//init
 
+//Init
 var initInputBox = function initInputBox() {
     var i;
     var j;
@@ -1050,12 +1037,10 @@ var init = function() {
     initPage();
 };
 
-//main
-
+//Main
 init();
 
-//ie fix
-
+//IE Fix
 if (!Array.prototype.indexOf) {
     Array.prototype.indexOf = function(searchElement /*, fromIndex */ ) {
         'use strict';
@@ -1088,12 +1073,3 @@ if (!Array.prototype.indexOf) {
         return -1;
     };
 }
-
-/*@cc_on @*/
-/*@if (@_jscript)
-    if(!document.cookie || (document.cookie.search("alerted") == -1)) {
-        alert("For better user experiment\nWe recommend to use more mordern browser.\nThe browser you are using will soon not be supported.\nWhy not try chrome or firefox?\nThey are really awesome.");
-    }
-    document.cookie = "" + document.cookie + " alerted";
-    @else @*/
-/*@end @*/
