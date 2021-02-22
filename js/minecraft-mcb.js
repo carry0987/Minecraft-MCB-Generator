@@ -1015,7 +1015,6 @@ var initInputBox = function initInputBox() {
             .keypress(inputBoxOnkeyPress)
             .each(function() {
                 $(this).val(inputBoxInfo[i].inputBoxDisplayDefault[$(this).attr("id")]);
-                console.log('ENTER');
             });
         if (i != currentInputMode) {
             for (j = 0; j < inputBoxInfo[i].modeClass.length; j++)
