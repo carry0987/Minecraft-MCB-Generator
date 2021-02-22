@@ -447,7 +447,6 @@ function appendCommandCollectionHigh(id, command, display) {
 
 //Search Element
 function getSingleInput(id) {
-
     if (inputBoxInfo[currentInputMode].isInputBoxEnabled[id] === false) {
         return null;
     }
@@ -522,6 +521,8 @@ function getSetBlockCommand(x, y, z, id, meta, nbt) {
     }
     if (nbt) {
         command = command + " " + nbt;
+    } else if (!nbt) {
+        command = command + " replace " + nbt;
     }
     return command;
 }
@@ -540,7 +541,7 @@ function _tagBuilder(_commandList, current, addComma = false) {
     var Listlength = _commandList.length;
     var insertComma = (addComma == true) ? "," : "";
     if (Listlength == 1) {
-        buffer = insertComma + "Command:\"" + _commandList[0].replace(/(\"|\\)/g, "\\\"") + " replace\"";
+        buffer = insertComma + "Command:\"" + _commandList[0].replace(/(\"|\\)/g, "\\\"") + "\"";
         if (current) {
             buffer = "Passengers:\[" + current + "\]" + buffer;
         }
@@ -548,7 +549,7 @@ function _tagBuilder(_commandList, current, addComma = false) {
         return buffer;
     } else {
         buffer = "id:\"command_block_minecart\"";
-        buffer = buffer + ",Command:\"" + _commandList[0].replace(/(\\"|\")/g, "\\$1") + " replace\"";
+        buffer = buffer + ",Command:\"" + _commandList[0].replace(/(\\"|\")/g, "\\$1") + "\"";
         if (current) {
             buffer = buffer + ",Passengers:\[" + current + "\]";
         }
@@ -791,7 +792,7 @@ function parsePos(pos) {
 function ParsedSetBlockCommand(str) {
     var setBlockFormat = /(\/?setblock) (~?-?\d+|~) (~?-?\d+|~) (~?-?\d+|~) ([\w\d:]+)( \d+)?( replace| keep| destroy)?( [^\n\r]+)?/;
     var tempArray = str.match(setBlockFormat);
-    if (!tempArray) { throw new Error("incorrect setblock command"); }
+    if (!tempArray) { throw new Error("Incorrect setblock command"); }
     this.original = str;
     this.position = new ParsedPosition(tempArray[2], tempArray[3], tempArray[4]);
     this.id = tempArray[5];
@@ -833,11 +834,11 @@ var reoderWithProperty = function reoderWithProperty(objList, attr, method) { //
                     next = (j == 0) ? objList[i + 1][attr[j]] : next[attr[j]];
                 }
             } catch (e) {
-                alert("error happened during search for property\n" + e.stack);
+                alert("Error happened during search for property\n" + e.stack);
                 throw e;
             }
             if (typeof(current) !== "number" || typeof(next) !== "number") {
-                throw new Error("property is not a number")
+                throw new Error("Property is not a number")
             }
             if (!(current === next) && ((current > next) === (method === "increase"))) {
                 temp = objList[i];
@@ -888,7 +889,7 @@ var splitWithProperty = function splitWithProperty(objectList, propertyList, mat
                 current = (j == 0) ? objectList[i][propertyList[j]] : current[propertyList[j]];
             }
         } catch (e) {
-            alert("error happened during search for property\n" + e.stack);
+            alert("Error happened during search for property\n" + e.stack);
             throw e;
         }
         try {
@@ -909,7 +910,7 @@ var splitWithProperty = function splitWithProperty(objectList, propertyList, mat
                 splitedObjectList.other.push(objectList[i]);
             }
         } catch (e) {
-            alert("error happened during match for rull\n" + e.stack);
+            alert("Error happened during match for rull\n" + e.stack);
             throw e;
         }
     }

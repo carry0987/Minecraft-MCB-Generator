@@ -30,7 +30,7 @@
 
 .m0_inputInnerLeft {
     height: 100%;
-    width: 220px;
+    width: 100%;
     position: absolute;
     left: 0;
     top: 0;
@@ -39,7 +39,7 @@
 .m0_inputInnerMid {
     height: 100%;
     width: 100%;
-    padding-left: 205px;
+    padding-left: 345px;
     padding-right: 190px;
     -webkit-box-sizing: border-box;
     /* Safari/Chrome, other WebKit */
@@ -160,6 +160,11 @@
 
 .idMetaInput {
     width: 30px;
+    height: 20px;
+}
+
+.idMetaInput.idExtend {
+    width: 150px;
     height: 20px;
 }
 
