@@ -515,7 +515,7 @@ function getSetBlockCommand(x, y, z, id, meta, nbt) {
     var command;
     meta = meta || "0";
 
-    command = "setblock " + '~' + x + " ~" + y + " ~" + z + " minecraft:" + id;
+    command = "setblock " + "~" + x + " ~" + y + " ~" + z + " minecraft:" + id;
     if (nbt && (meta !== "0")) {
         command = command + " " + meta;
     }
