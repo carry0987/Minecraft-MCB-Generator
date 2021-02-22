@@ -516,13 +516,13 @@ function getSetBlockCommand(x, y, z, id, meta, nbt) {
     meta = meta || "0";
 
     command = "setblock " + '~' + x + " ~" + y + " ~" + z + " minecraft:" + id;
-    if (nbt || (meta !== "0")) {
+    if (nbt && (meta !== "0")) {
         command = command + " " + meta;
     }
     if (nbt) {
         command = command + " " + nbt;
     } else if (!nbt) {
-        command = command + " replace " + nbt;
+        command = command + " replace ";
     }
     return command;
 }
