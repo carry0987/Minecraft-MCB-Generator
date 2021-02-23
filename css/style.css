@@ -29,6 +29,11 @@
     bottom: 0px;
 }
 
+#auto_relative {
+    margin: 2px 3px 4px 3px;
+    vertical-align: middle;
+}
+
 .m0_inputInnerLeft {
     height: 100%;
     width: 100%;
