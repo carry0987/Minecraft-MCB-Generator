@@ -437,12 +437,15 @@ function appendCommand(command, addMCB = true) {
     var id = (new Date()).getTime();
     addBlock(id, command);
     commandList[id] = command;
+    var storageInfo = getValue("MCB", true);
     if (addMCB === true) {
-        var storageInfo = getValue("MCB", true);
         storageInfo = (storageInfo == null) ? {} : storageInfo;
         storageInfo[id] = command;
-        setValue("MCB", storageInfo);
+    } else {
+        storageInfo[id] = storageInfo[addMCB];
+        delete storageInfo[addMCB];
     }
+    setValue("MCB", storageInfo);
 }
 
 function appendCommandCollection(command, display) {
@@ -1037,7 +1040,7 @@ var initInputBox = function initInputBox() {
 var initOutputBox = function initOutputBox() {
     var MCBStorage = getValue("MCB", true);
     for (var key in MCBStorage) {
-        appendCommand(MCBStorage[key], false);
+        appendCommand(MCBStorage[key], key);
     }
 }
 var initButton = function initButton() {
