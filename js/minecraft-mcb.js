@@ -385,7 +385,8 @@ function addBlock(id, inf) {
             $(this).slideUp(100, function() {
                 commandList[$(this).attr("id")] = null;
                 var removeStorage = getValue("MCB", true);
-                if (removeStorage[id]) { delete removeStorage[id] }
+                if (removeStorage[id]) { delete removeStorage[id]; }
+                setValue("MCB", removeStorage);
                 $(this).remove();
             });
         })
@@ -435,10 +436,10 @@ function addBlockCollectionHigh(id, inf) {
 function appendCommand(command, addMCB = true) {
     var id = (new Date()).getTime();
     addBlock(id, command);
+    commandList[id] = command;
     if (addMCB === true) {
         var storageInfo = getValue("MCB", true);
         storageInfo = (storageInfo == null) ? {} : storageInfo;
-        commandList[id] = command;
         storageInfo[id] = command;
         setValue("MCB", storageInfo);
     }
