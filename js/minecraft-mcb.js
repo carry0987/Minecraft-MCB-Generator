@@ -535,7 +535,7 @@ function getSetBlockCommand(x, y, z, id, meta, nbt) {
     var command;
     meta = meta || "0";
 
-    if ($("input[name=auto_relative]").checked) {
+    if ($("#auto_relative").prop('checked')) {
         command = "setblock " + "~" + x + " ~" + y + " ~" + z + " minecraft:" + id;
     } else {
         command = "setblock " + x + y + z + " minecraft:" + id;
