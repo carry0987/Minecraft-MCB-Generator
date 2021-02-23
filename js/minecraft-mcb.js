@@ -43,7 +43,7 @@ inputBoxInfo[0].inputBoxFormat = {
     m0_x: /(~?-?\d+|~)/g,
     m0_y: /(~?-?\d+|~)/g,
     m0_z: /(~?-?\d+|~)/g,
-    m0_id: /[\w:\=\[\]\{\}]+/g,
+    m0_id: /[\w:\=\[\]\{\}\!\?\.\,]+/g,
     m0_meta: /\d+/g,
     m0_nbtTag: /.+/g
 };
@@ -123,7 +123,7 @@ inputBoxInfo[2].inputBoxFormat = {
     m2_x1: /(~?-?\d+|~)/g,
     m2_y1: /(~?-?\d+|~)/g,
     m2_z1: /(~?-?\d+|~)/g,
-    m2_id: /[\w:\=\[\]\{\}]+/g,
+    m2_id: /[\w:\=\[\]\{\}\!\?\.\,]+/g,
     m2_meta: /\d+/g,
     m2_nbtTag: /.+/g
 };
@@ -384,6 +384,8 @@ function addBlock(id, inf) {
         .click(function() {
             $(this).slideUp(100, function() {
                 commandList[$(this).attr("id")] = null;
+                var removeStorage = getValue("MCB", true);
+                if (removeStorage[id]) { delete removeStorage[id] }
                 $(this).remove();
             });
         })
@@ -408,6 +410,7 @@ function addBlockCollection(id, inf) {
         .hide()
         .appendTo("#displayInput")
         .slideDown(200);
+    $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 300);
 }
 
 function addBlockCollectionHigh(id, inf) {
@@ -425,6 +428,7 @@ function addBlockCollectionHigh(id, inf) {
         .hide()
         .appendTo("#displayInput")
         .slideDown(200);
+    $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 300);
 }
 
 //Command List
@@ -436,9 +440,6 @@ function appendCommand(command) {
     addBlock(id, command);
     storageInfo[id] = command;
     setValue("MCB", storageInfo);
-    for (var key in storageInfo) {
-        console.log("key " + key + " has value " + storageInfo[key]);
-    }
 }
 
 function appendCommandCollection(command, display) {
@@ -1030,6 +1031,11 @@ var initInputBox = function initInputBox() {
     }
 
 };
+var initOutputBox = function initOutputBox(storageArray) {
+    for (var key in storageArray) {
+        console.log("key " + key + " has value " + storageArray[key]);
+    }
+}
 var initButton = function initButton() {
     $("#addBlock").click(onClickAddBlock);
     $("#generateCommand").click(onClickGenerate);
@@ -1037,6 +1043,7 @@ var initButton = function initButton() {
 };
 var initPage = function initPage() {
     initInputBox();
+    //initOutputBox();
     initButton();
 };
 var init = function() {
