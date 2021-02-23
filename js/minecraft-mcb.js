@@ -432,14 +432,16 @@ function addBlockCollectionHigh(id, inf) {
 }
 
 //Command List
-function appendCommand(command) {
+function appendCommand(command, addMCB = true) {
     var id = (new Date()).getTime();
-    var storageInfo = getValue("MCB", true);
-    storageInfo = (storageInfo == null) ? {} : storageInfo;
-    commandList[id] = command;
     addBlock(id, command);
-    storageInfo[id] = command;
-    setValue("MCB", storageInfo);
+    if (addMCB === true) {
+        var storageInfo = getValue("MCB", true);
+        storageInfo = (storageInfo == null) ? {} : storageInfo;
+        commandList[id] = command;
+        storageInfo[id] = command;
+        setValue("MCB", storageInfo);
+    }
 }
 
 function appendCommandCollection(command, display) {
@@ -1031,9 +1033,10 @@ var initInputBox = function initInputBox() {
     }
 
 };
-var initOutputBox = function initOutputBox(storageArray) {
-    for (var key in storageArray) {
-        console.log("key " + key + " has value " + storageArray[key]);
+var initOutputBox = function initOutputBox() {
+    var MCBStorage = getValue("MCB", true);
+    for (var key in MCBStorage) {
+        appendCommand(MCBStorage[key], false);
     }
 }
 var initButton = function initButton() {
@@ -1043,7 +1046,7 @@ var initButton = function initButton() {
 };
 var initPage = function initPage() {
     initInputBox();
-    //initOutputBox();
+    initOutputBox();
     initButton();
 };
 var init = function() {
