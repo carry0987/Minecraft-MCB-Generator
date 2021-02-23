@@ -384,9 +384,7 @@ function addBlock(id, inf) {
         .click(function() {
             $(this).slideUp(100, function() {
                 commandList[$(this).attr("id")] = null;
-                var removeStorage = getValue("MCB", true);
-                if (removeStorage[id]) { delete removeStorage[id]; }
-                setValue("MCB", removeStorage);
+                deleteMCBStorage("MCB", id);
                 $(this).remove();
             });
         })
@@ -405,6 +403,7 @@ function addBlockCollection(id, inf) {
         .click(function() {
             $(this).slideUp(100, function() {
                 commandCollectionList[$(this).attr("id")] = null;
+                deleteMCBStorage("MCB", id);
                 $(this).remove();
             });
         })
@@ -423,6 +422,7 @@ function addBlockCollectionHigh(id, inf) {
         .click(function() {
             $(this).slideUp(100, function() {
                 commandCollectionList[$(this).attr("id")] = null;
+                deleteMCBStorage("MCB", id);
                 $(this).remove();
             });
         })
@@ -457,6 +457,12 @@ function appendCommandCollection(command, display) {
 function appendCommandCollectionHigh(id, command, display) {
     commandCollectionList[id] = command;
     addBlockCollection(id, display);
+}
+
+function deleteMCBStorage(storageName, id) {
+    var removeStorage = getValue(storageName, true);
+    if (removeStorage[id]) { delete removeStorage[id]; }
+    setValue(storageName, removeStorage);
 }
 
 //Search Element
