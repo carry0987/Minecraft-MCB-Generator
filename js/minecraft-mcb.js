@@ -453,6 +453,7 @@ function appendCommand(command, addMCB = true) {
     var id = (new Date()).getTime();
     addBlock(id, command);
     commandList[id] = command;
+    //Add block into localStorage
     addMCBStorage("MCB", id, command, addMCB);
 }
 
@@ -460,12 +461,14 @@ function appendCommandCollection(command, display, addMCB = true) {
     var id = (new Date()).getTime();
     commandCollectionList[id] = command;
     addBlockCollection(id, display);
+    //Add block into localStorage
     addMCBStorage("MCB", id, command, addMCB);
 }
 
 function appendCommandCollectionHigh(id, command, display, addMCB = true) {
     commandCollectionList[id] = command;
     addBlockCollection(id, display);
+    //Add block into localStorage
     addMCBStorage("MCB", id, command, addMCB);
 }
 
