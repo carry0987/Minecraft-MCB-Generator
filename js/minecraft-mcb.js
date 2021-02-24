@@ -536,10 +536,11 @@ function getSetBlockCommand(x, y, z, id, meta, nbt) {
     meta = meta || "0";
 
     if ($("#auto_relative").prop('checked')) {
-        command = "setblock " + "~" + x + " ~" + y + " ~" + z + " minecraft:" + id;
-    } else {
-        command = "setblock " + x + " " + y + " " + z + " minecraft:" + id;
+        x = (x.search("~") !== -1) ? x : "~" + x;
+        y = (y.search("~") !== -1) ? y : "~" + y;
+        z = (z.search("~") !== -1) ? z : "~" + z;
     }
+    command = "setblock " + x + " " + y + " " + z + " minecraft:" + id;
     if (nbt && (meta !== "0")) {
         command = command + " " + meta;
     }
