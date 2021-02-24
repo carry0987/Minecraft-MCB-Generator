@@ -293,6 +293,14 @@ inputModeList[2].getTitle = function() {
     var nbt = getSingleInput("m2_nbtTag");
     var title;
     meta = meta || "0";
+    if ($("#auto_relative").prop('checked')) {
+        x0 = (String(x0).search("~") !== -1) ? x0 : "~" + x0;
+        y0 = (String(y0).search("~") !== -1) ? y0 : "~" + y0;
+        z0 = (String(z0).search("~") !== -1) ? z0 : "~" + z0;
+        x1 = (String(x1).search("~") !== -1) ? x1 : "~" + x1;
+        y1 = (String(y1).search("~") !== -1) ? y1 : "~" + y1;
+        z1 = (String(z1).search("~") !== -1) ? z1 : "~" + z1;
+    }
     title = "Area /setblock pos:(" + x0 + "," + y0 + "," + z0 + ") ~ (" + x1 + "," + y1 + "," + z1 + ") id:" + id;
     if (meta !== "0") {
         title = title + " meta:" + meta;
@@ -370,6 +378,14 @@ inputModeList[3].getTitle = function() {
         suffix = " " + suffix;
     }
     var title;
+    if ($("#auto_relative").prop('checked')) {
+        x0 = (String(x0).search("~") !== -1) ? x0 : "~" + x0;
+        y0 = (String(y0).search("~") !== -1) ? y0 : "~" + y0;
+        z0 = (String(z0).search("~") !== -1) ? z0 : "~" + z0;
+        x1 = (String(x1).search("~") !== -1) ? x1 : "~" + x1;
+        y1 = (String(y1).search("~") !== -1) ? y1 : "~" + y1;
+        z1 = (String(z1).search("~") !== -1) ? z1 : "~" + z1;
+    }
     title = "RawCommand :" + prefix + "((" + x0 + "," + y0 + "," + z0 + ") ~ (" + x1 + "," + y1 + "," + z1 + ") ,space:" + space + ")" + suffix;
     return title;
 };
