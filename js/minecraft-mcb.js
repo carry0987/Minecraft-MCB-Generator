@@ -437,26 +437,32 @@ function appendCommand(command, addMCB = true) {
     var id = (new Date()).getTime();
     addBlock(id, command);
     commandList[id] = command;
-    var storageInfo = getValue("MCB", true);
-    if (addMCB === true) {
-        storageInfo = (storageInfo == null) ? {} : storageInfo;
-        storageInfo[id] = command;
-    } else {
-        storageInfo[id] = storageInfo[addMCB];
-        delete storageInfo[addMCB];
-    }
-    setValue("MCB", storageInfo);
+    addMCBStorage("MCB", id, command, addMCB);
 }
 
-function appendCommandCollection(command, display) {
+function appendCommandCollection(command, display, addMCB = true) {
     var id = (new Date()).getTime();
     commandCollectionList[id] = command;
     addBlockCollection(id, display);
+    addMCBStorage("MCB", id, command, addMCB);
 }
 
-function appendCommandCollectionHigh(id, command, display) {
+function appendCommandCollectionHigh(id, command, display, addMCB = true) {
     commandCollectionList[id] = command;
     addBlockCollection(id, display);
+    addMCBStorage("MCB", id, command, addMCB);
+}
+
+function addMCBStorage(storageName, id, command, addMCB) {
+    var addStorage = getValue(storageName, true);
+    if (addMCB === true) {
+        addStorage = (addStorage == null) ? {} : addStorage;
+        addStorage[id] = command;
+    } else {
+        addStorage[id] = addStorage[addMCB];
+        delete addStorage[addMCB];
+    }
+    setValue(storageName, addStorage);
 }
 
 function deleteMCBStorage(storageName, id) {
@@ -541,7 +547,7 @@ function getSetBlockCommand(x, y, z, id, meta, nbt) {
         z = (z.search("~") !== -1) ? z : "~" + z;
     }
     command = "setblock " + x + " " + y + " " + z + " minecraft:" + id;
-    if (meta !== "0") {
+    if ((meta !== "0")) {
         command = command + " " + meta;
     }
     if (nbt) {
