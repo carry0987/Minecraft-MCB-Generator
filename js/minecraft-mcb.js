@@ -460,13 +460,13 @@ function appendCommandCollection(command, display, addMCB = true) {
     var id = (new Date()).getTime();
     commandCollectionList[id] = command;
     addBlockCollection(id, display);
-    addMCBStorage("MCB", id, command, addMCB);
+    addMCBStorage("MCB", id, display, addMCB);
 }
 
 function appendCommandCollectionHigh(id, command, display, addMCB = true) {
     commandCollectionList[id] = command;
     addBlockCollection(id, display);
-    addMCBStorage("MCB", id, command, addMCB);
+    addMCBStorage("MCB", id, display, addMCB);
 }
 
 function addMCBStorage(storageName, id, command, addMCB) {
