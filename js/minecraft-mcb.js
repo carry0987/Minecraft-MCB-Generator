@@ -251,7 +251,7 @@ inputModeList[2].getCurrentInput = function() {
     var x1 = getSingleInput("m2_x1");
     var y1 = getSingleInput("m2_y1");
     var z1 = getSingleInput("m2_z1");
-    var id = getSingleInput("m2_id");
+    var id = getSingleInput("m2_id", true);
     var meta = getSingleInput("m2_meta");
     var nbt = getSingleInput("m2_nbtTag");
     return getMultiSetBlockCommand(x0, y0, z0, x1, y1, z1, id, meta, nbt);
@@ -288,7 +288,7 @@ inputModeList[2].getTitle = function() {
     var x1 = getSingleInput("m2_x1");
     var y1 = getSingleInput("m2_y1");
     var z1 = getSingleInput("m2_z1");
-    var id = getSingleInput("m2_id");
+    var id = getSingleInput("m2_id", true);
     var meta = getSingleInput("m2_meta");
     var nbt = getSingleInput("m2_nbtTag");
     var title;
@@ -488,11 +488,12 @@ function deleteMCBStorage(storageName, id) {
 }
 
 //Search Element
-function getSingleInput(id) {
+function getSingleInput(id, trimSpace = false) {
     if (inputBoxInfo[currentInputMode].isInputBoxEnabled[id] === false) {
         return null;
     }
     var content = $("#" + id).val();
+    content = (trimSpace === true) ? content.replace(/\s+/g, '') : content;
     if (!(content.match(inputBoxInfo[currentInputMode].inputBoxFormat[id])) || (content.match(inputBoxInfo[currentInputMode].inputBoxFormat[id])[0] != content)) {
         return null;
     }
@@ -1071,19 +1072,17 @@ var initInputBox = function initInputBox() {
 
 };
 var initOutputBox = function initOutputBox() {
-    var regexStart2 = /Area/;
-    var regexStart3 = /RawCommand/;
-    var regexMode2 = /Area\ \/setblock\ pos\:.([\~\-]\d*).([\~\-]\d*).([\~\-]\d*).{4}.([\~\-]\d*).([\~\-]\d*).([\~\-]\d*).{5}(\w*).[meta\:]{0,5}(\d+){1}.[NbtTag\:]{0,7}(replace|keep|destroy)/;
-    var regexMode3 = /Area\ \/setblock\ pos\:.([\~\-]\d*).([\~\-]\d*).([\~\-]\d*).{4}.([\~\-]\d*).([\~\-]\d*).([\~\-]\d*).{5}(\w*).[meta\:]{0,5}(\d+){1}.[NbtTag\:]{0,7}(replace|keep|destroy)/;
+    var multiBlock pos0 pos1 position;
+    var regexMode2 = /^Area\ \/setblock\ pos\:\(([\-\~\d,]*)\)\ \~\ \(([\-\~\d,]*)\)\ id\:([\[\w\]\=\,\!]*)(?:\ meta\:(\d+))?(?:\ NbtTag\:(.*))?/;
     var MCBStorage = getValue("MCB", true);
-    var classifyMCB;
     for (var key in MCBStorage) {
-        if (MCBStorage[key].match(regexStart2)) {
-            classifyMCB = MCBStorage[key].match(regexMode2);
-            console.log(classifyMCB["0"]);
-        } else if (MCBStorage[key].match(regexStart3)) {
-            classifyMCB = MCBStorage[key].match(regexMode3);
-            console.log(classifyMCB);
+        multiBlock = MCBStorage[key].match(regexMode2);
+        if (multiBlock) {
+            pos0 = multiBlock[1].split(',', 3);
+            pos1 = multiBlock[2].split(',', 3);
+            position = pos0.concat(pos1);
+            appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), MCBStorage[key]);
+            console.log(multiBlock);
         } else {
             appendCommand(MCBStorage[key], key);
         }
