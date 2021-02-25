@@ -1072,7 +1072,10 @@ var initInputBox = function initInputBox() {
 
 };
 var initOutputBox = function initOutputBox() {
-    var multiBlock pos0 pos1 position;
+    var multiBlock;
+    var pos0;
+    var pos1;
+    var position;
     var regexMode2 = /^Area\ \/setblock\ pos\:\(([\-\~\d,]*)\)\ \~\ \(([\-\~\d,]*)\)\ id\:([\[\w\]\=\,\!]*)(?:\ meta\:(\d+))?(?:\ NbtTag\:(.*))?/;
     var MCBStorage = getValue("MCB", true);
     for (var key in MCBStorage) {
