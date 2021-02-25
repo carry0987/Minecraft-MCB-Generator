@@ -1084,7 +1084,7 @@ var initOutputBox = function initOutputBox() {
             pos0 = multiBlock[1].split(',', 3);
             pos1 = multiBlock[2].split(',', 3);
             position = pos0.concat(pos1);
-            appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), MCBStorage[key]);
+            appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), MCBStorage[key], key);
             console.log(multiBlock);
         } else {
             appendCommand(MCBStorage[key], key);
