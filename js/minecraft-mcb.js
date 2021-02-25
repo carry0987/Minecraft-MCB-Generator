@@ -1071,9 +1071,22 @@ var initInputBox = function initInputBox() {
 
 };
 var initOutputBox = function initOutputBox() {
+    var regexStart2 = /Area/;
+    var regexStart3 = /RawCommand/;
+    var regexMode2 = /Area\ \/setblock\ pos\:.([\~\-]\d*).([\~\-]\d*).([\~\-]\d*).{4}.([\~\-]\d*).([\~\-]\d*).([\~\-]\d*).{5}(\w*).[meta\:]{0,5}(\d+){1}.[NbtTag\:]{0,7}(replace|keep|destroy)/;
+    var regexMode3 = /Area\ \/setblock\ pos\:.([\~\-]\d*).([\~\-]\d*).([\~\-]\d*).{4}.([\~\-]\d*).([\~\-]\d*).([\~\-]\d*).{5}(\w*).[meta\:]{0,5}(\d+){1}.[NbtTag\:]{0,7}(replace|keep|destroy)/;
     var MCBStorage = getValue("MCB", true);
+    var classifyMCB;
     for (var key in MCBStorage) {
-        appendCommand(MCBStorage[key], key);
+        if (MCBStorage[key].match(regexStart2)) {
+            classifyMCB = MCBStorage[key].match(regexMode2);
+            console.log(classifyMCB["0"]);
+        } else if (MCBStorage[key].match(regexStart3)) {
+            classifyMCB = MCBStorage[key].match(regexMode3);
+            console.log(classifyMCB);
+        } else {
+            appendCommand(MCBStorage[key], key);
+        }
     }
 }
 var initButton = function initButton() {
