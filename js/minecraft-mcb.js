@@ -3,6 +3,7 @@ var currentInputMode = 0;
 var inputModeCount = 4;
 var inputBoxInfo = [];
 
+//Set for Mode 0
 inputBoxInfo[0] = [];
 inputBoxInfo[0].modeClass = ["inputMode0_display"];
 inputBoxInfo[0].textClass = ["inputMode0"];
@@ -48,6 +49,7 @@ inputBoxInfo[0].inputBoxFormat = {
     m0_nbtTag: /.+/g
 };
 
+//Set for Mode 1
 inputBoxInfo[1] = [];
 inputBoxInfo[1].modeClass = ["inputMode1_display"];
 inputBoxInfo[1].textClass = ["inputMode1"];
@@ -68,6 +70,7 @@ inputBoxInfo[1].inputBoxFormat = {
     m1_rawCommand: /.+/g
 };
 
+//Set for Mode 2
 inputBoxInfo[2] = [];
 inputBoxInfo[2].modeClass = ["inputMode2_display"];
 inputBoxInfo[2].textClass = ["inputMode2"];
@@ -128,7 +131,7 @@ inputBoxInfo[2].inputBoxFormat = {
     m2_nbtTag: /.+/g
 };
 
-
+//Set for Mode 3
 inputBoxInfo[3] = [];
 inputBoxInfo[3].modeClass = ["inputMode3_display"];
 inputBoxInfo[3].textClass = ["inputMode3"];
@@ -1085,7 +1088,6 @@ var initOutputBox = function initOutputBox() {
             pos1 = multiBlock[2].split(',', 3);
             position = pos0.concat(pos1);
             appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), MCBStorage[key], key);
-            console.log(multiBlock);
         } else {
             appendCommand(MCBStorage[key], key);
         }
