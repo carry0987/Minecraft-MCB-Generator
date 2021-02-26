@@ -211,9 +211,11 @@ inputModeList[0].addBlockListener = function() {
     }
 };
 inputModeList[0].getCurrentInput = function() {
-    var x = getSingleInput("m0_x");
-    var y = getSingleInput("m0_y");
-    var z = getSingleInput("m0_z");
+    var relativePos;
+    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
+    var x = getSingleInput("m0_x", false, relativePos);
+    var y = getSingleInput("m0_y", false, relativePos);
+    var z = getSingleInput("m0_z", false, relativePos);
     var id = getSingleInput("m0_id");
     var meta = getSingleInput("m0_meta");
     var nbt = getSingleInput("m0_nbtTag");
@@ -248,12 +250,14 @@ inputModeList[2].addBlockListener = function() {
     }
 };
 inputModeList[2].getCurrentInput = function() {
-    var x0 = getSingleInput("m2_x0");
-    var y0 = getSingleInput("m2_y0");
-    var z0 = getSingleInput("m2_z0");
-    var x1 = getSingleInput("m2_x1");
-    var y1 = getSingleInput("m2_y1");
-    var z1 = getSingleInput("m2_z1");
+    var relativePos;
+    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
+    var x0 = getSingleInput("m2_x0", false, relativePos);
+    var y0 = getSingleInput("m2_y0", false, relativePos);
+    var z0 = getSingleInput("m2_z0", false, relativePos);
+    var x1 = getSingleInput("m2_x1", false, relativePos);
+    var y1 = getSingleInput("m2_y1", false, relativePos);
+    var z1 = getSingleInput("m2_z1", false, relativePos);
     var id = getSingleInput("m2_id", true);
     var meta = getSingleInput("m2_meta");
     var nbt = getSingleInput("m2_nbtTag");
@@ -261,12 +265,14 @@ inputModeList[2].getCurrentInput = function() {
 };
 inputModeList[2].additionCheck = function() {
     var isCorrect = true;
-    var x0 = getSingleInput("m2_x0");
-    var y0 = getSingleInput("m2_y0");
-    var z0 = getSingleInput("m2_z0");
-    var x1 = getSingleInput("m2_x1");
-    var y1 = getSingleInput("m2_y1");
-    var z1 = getSingleInput("m2_z1");
+    var relativePos;
+    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
+    var x0 = getSingleInput("m2_x0", false, relativePos);
+    var y0 = getSingleInput("m2_y0", false, relativePos);
+    var z0 = getSingleInput("m2_z0", false, relativePos);
+    var x1 = getSingleInput("m2_x1", false, relativePos);
+    var y1 = getSingleInput("m2_y1", false, relativePos);
+    var z1 = getSingleInput("m2_z1", false, relativePos);
     if ((x0.search("~") === -1) !== (x1.search("~") === -1)) {
         isCorrect = false;
         $("#m2_x0").addClass("badFormat");
@@ -285,25 +291,19 @@ inputModeList[2].additionCheck = function() {
     return isCorrect;
 };
 inputModeList[2].getTitle = function() {
-    var x0 = getSingleInput("m2_x0");
-    var y0 = getSingleInput("m2_y0");
-    var z0 = getSingleInput("m2_z0");
-    var x1 = getSingleInput("m2_x1");
-    var y1 = getSingleInput("m2_y1");
-    var z1 = getSingleInput("m2_z1");
+    var relativePos;
+    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
+    var x0 = getSingleInput("m2_x0", false, relativePos);
+    var y0 = getSingleInput("m2_y0", false, relativePos);
+    var z0 = getSingleInput("m2_z0", false, relativePos);
+    var x1 = getSingleInput("m2_x1", false, relativePos);
+    var y1 = getSingleInput("m2_y1", false, relativePos);
+    var z1 = getSingleInput("m2_z1", false, relativePos);
     var id = getSingleInput("m2_id", true);
     var meta = getSingleInput("m2_meta");
     var nbt = getSingleInput("m2_nbtTag");
     var title;
     meta = meta || "0";
-    if ($("#auto_relative").prop('checked')) {
-        x0 = (String(x0).search("~") !== -1) ? x0 : "~" + x0;
-        y0 = (String(y0).search("~") !== -1) ? y0 : "~" + y0;
-        z0 = (String(z0).search("~") !== -1) ? z0 : "~" + z0;
-        x1 = (String(x1).search("~") !== -1) ? x1 : "~" + x1;
-        y1 = (String(y1).search("~") !== -1) ? y1 : "~" + y1;
-        z1 = (String(z1).search("~") !== -1) ? z1 : "~" + z1;
-    }
     title = "Area /setblock pos:(" + x0 + "," + y0 + "," + z0 + ") ~ (" + x1 + "," + y1 + "," + z1 + ") id:" + id;
     if (meta !== "0") {
         title = title + " meta:" + meta;
@@ -327,24 +327,28 @@ inputModeList[3].addBlockListener = function() {
 };
 inputModeList[3].getCurrentInput = function() {
     var prefix = getSingleInput("m3_prefix");
-    var x0 = getSingleInput("m3_x0");
-    var y0 = getSingleInput("m3_y0");
-    var z0 = getSingleInput("m3_z0");
-    var x1 = getSingleInput("m3_x1");
-    var y1 = getSingleInput("m3_y1");
-    var z1 = getSingleInput("m3_z1");
+    var relativePos;
+    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
+    var x0 = getSingleInput("m3_x0", false, relativePos);
+    var y0 = getSingleInput("m3_y0", false, relativePos);
+    var z0 = getSingleInput("m3_z0", false, relativePos);
+    var x1 = getSingleInput("m3_x1", false, relativePos);
+    var y1 = getSingleInput("m3_y1", false, relativePos);
+    var z1 = getSingleInput("m3_z1", false, relativePos);
     var space = getSingleInput("m3_space");
     var suffix = getSingleInput("m3_suffix");
     return getMultiRawCommand(x0, y0, z0, x1, y1, z1, prefix, space, suffix);
 };
 inputModeList[3].additionCheck = function() {
     var isCorrect = true;
-    var x0 = getSingleInput("m3_x0");
-    var y0 = getSingleInput("m3_y0");
-    var z0 = getSingleInput("m3_z0");
-    var x1 = getSingleInput("m3_x1");
-    var y1 = getSingleInput("m3_y1");
-    var z1 = getSingleInput("m3_z1");
+    var relativePos;
+    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
+    var x0 = getSingleInput("m3_x0", false, relativePos);
+    var y0 = getSingleInput("m3_y0", false, relativePos);
+    var z0 = getSingleInput("m3_z0", false, relativePos);
+    var x1 = getSingleInput("m3_x1", false, relativePos);
+    var y1 = getSingleInput("m3_y1", false, relativePos);
+    var z1 = getSingleInput("m3_z1", false, relativePos);
     if ((x0.search("~") === -1) !== (x1.search("~") === -1)) {
         isCorrect = false;
         $("#m3_x0").addClass("badFormat");
@@ -364,12 +368,14 @@ inputModeList[3].additionCheck = function() {
 };
 inputModeList[3].getTitle = function() {
     var prefix = getSingleInput("m3_prefix");
-    var x0 = getSingleInput("m3_x0");
-    var y0 = getSingleInput("m3_y0");
-    var z0 = getSingleInput("m3_z0");
-    var x1 = getSingleInput("m3_x1");
-    var y1 = getSingleInput("m3_y1");
-    var z1 = getSingleInput("m3_z1");
+    var relativePos;
+    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
+    var x0 = getSingleInput("m3_x0", false, relativePos);
+    var y0 = getSingleInput("m3_y0", false, relativePos);
+    var z0 = getSingleInput("m3_z0", false, relativePos);
+    var x1 = getSingleInput("m3_x1", false, relativePos);
+    var y1 = getSingleInput("m3_y1", false, relativePos);
+    var z1 = getSingleInput("m3_z1", false, relativePos);
     var space = getSingleInput("m3_space");
     var suffix = getSingleInput("m3_suffix");
     space = parseInt(space, 10) || 1;
@@ -381,14 +387,6 @@ inputModeList[3].getTitle = function() {
         suffix = " " + suffix;
     }
     var title;
-    if ($("#auto_relative").prop('checked')) {
-        x0 = (String(x0).search("~") !== -1) ? x0 : "~" + x0;
-        y0 = (String(y0).search("~") !== -1) ? y0 : "~" + y0;
-        z0 = (String(z0).search("~") !== -1) ? z0 : "~" + z0;
-        x1 = (String(x1).search("~") !== -1) ? x1 : "~" + x1;
-        y1 = (String(y1).search("~") !== -1) ? y1 : "~" + y1;
-        z1 = (String(z1).search("~") !== -1) ? z1 : "~" + z1;
-    }
     title = "RawCommand :" + prefix + "((" + x0 + "," + y0 + "," + z0 + ") ~ (" + x1 + "," + y1 + "," + z1 + ") ,space:" + space + ")" + suffix;
     return title;
 };
@@ -491,12 +489,15 @@ function deleteMCBStorage(storageName, id) {
 }
 
 //Search Element
-function getSingleInput(id, trimSpace = false) {
+function getSingleInput(id, trimSpace = false, relativePos = false) {
     if (inputBoxInfo[currentInputMode].isInputBoxEnabled[id] === false) {
         return null;
     }
     var content = $("#" + id).val();
     content = (trimSpace === true) ? content.replace(/\s+/g, '') : content;
+    if (relativePos === true) {
+        content = (String(content).search("~") !== -1) ? content : "~" + content;
+    }
     if (!(content.match(inputBoxInfo[currentInputMode].inputBoxFormat[id])) || (content.match(inputBoxInfo[currentInputMode].inputBoxFormat[id])[0] != content)) {
         return null;
     }
