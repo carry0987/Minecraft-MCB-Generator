@@ -585,6 +585,7 @@ function generateCommandFinal(commandList) {
     var command = "/summon command_block_minecart ~-2 ~ ~ " + _tagBuilder(commandList);
     return command;
 }
+
 //Core Logic
 function _tagBuilder(_commandList, current, addComma = false) {
     var buffer;
