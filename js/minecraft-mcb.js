@@ -1093,7 +1093,8 @@ var initOutputBox = function initOutputBox() {
                 position = pos0.concat(pos1);
                 appendCommandCollection(getMultiRawCommand(...position, multiBlock[1], multiBlock[4], multiBlock[5]), MCBStorage[key], key);
             }
-        } else {
+        }
+        if (multiBlock == null) {
             appendCommand(MCBStorage[key], key);
         }
     }
