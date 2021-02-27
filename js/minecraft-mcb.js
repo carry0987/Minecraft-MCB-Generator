@@ -562,7 +562,8 @@ function getSetBlockCommand(x, y, z, id, meta, nbt) {
     var command;
     meta = meta || "0";
 
-    command = "setblock " + x + " " + y + " " + z + " minecraft:" + id;
+    id = (id.search('minecraft:') !== -1) ? id : 'minecraft:' + id;
+    command = "setblock " + x + " " + y + " " + z + " " + id;
     if ((meta !== "0")) {
         command = command + " " + meta;
     }
