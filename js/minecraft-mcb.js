@@ -304,6 +304,7 @@ inputModeList[2].getTitle = function() {
     var nbt = getSingleInput("m2_nbtTag");
     var title;
     meta = meta || "0";
+    id = (id.search('minecraft:') !== -1) ? id : 'minecraft:' + id;
     title = "Area /setblock pos:(" + x0 + "," + y0 + "," + z0 + ") ~ (" + x1 + "," + y1 + "," + z1 + ") id:" + id;
     if (meta !== "0") {
         title = title + " meta:" + meta;
