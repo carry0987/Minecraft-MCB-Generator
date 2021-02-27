@@ -198,6 +198,7 @@ var commandCollectionList = {};
 
 //Input mode list
 var inputModeList = [];
+var swapXZPos = false;
 
 //Input mode 0
 inputModeList[0] = {};
@@ -577,12 +578,13 @@ function getSetBlockCommand(x, y, z, id, meta, nbt) {
 }
 
 function generateCommandFinal(commandList) {
+    var posMCB;
     if (!commandList[0]) {
         return "No Input!"
     }
     setBlockReorder(commandList);
-    console.log(commandList);
-    var command = "/summon command_block_minecart ~-2 ~ ~ " + _tagBuilder(commandList);
+    posMCB = (swapXZPos === true) ? '~ ~ ~2' : '~-2 ~ ~';
+    var command = "/summon command_block_minecart " + posMCB + " " + _tagBuilder(commandList);
     return command;
 }
 
@@ -1002,10 +1004,6 @@ function getFinalCommand() {
 }
 
 //Listener
-function onClickAddBlock() {
-    addBlockListenerAdapter();
-}
-
 function inputBoxOnSelect() {
     if (!inputBoxInfo[currentInputMode].isInputBoxEnabled[this.id]) {
         inputBoxEnable(this);
@@ -1040,6 +1038,10 @@ function inputBoxOnkeyPress(event) {
     return true;
 }
 
+function onClickAddBlock() {
+    addBlockListenerAdapter();
+}
+
 function onClickGenerate() {
     var command = getFinalCommand();
     if (command) {
@@ -1052,6 +1054,11 @@ function onClickGenerate() {
 
 function onClickSwitchMode() {
     switchMode();
+}
+
+function onClickSwapPos() {
+    $("#commandText").text('');
+    swapXZPos = (swapXZPos === false) ? true : false;
 }
 
 //Init
@@ -1107,6 +1114,7 @@ var initButton = function initButton() {
     $("#addBlock").click(onClickAddBlock);
     $("#generateCommand").click(onClickGenerate);
     $("#switchMode").click(onClickSwitchMode);
+    $("#swap_x_z").click(onClickSwapPos);
 };
 var initPage = function initPage() {
     initInputBox();
