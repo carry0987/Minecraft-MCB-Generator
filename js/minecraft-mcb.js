@@ -599,7 +599,7 @@ function _tagBuilder(_commandList, current, addComma = false) {
             buffer = "Passengers:\[" + current + "\]" + buffer;
         }
         motionMCB = (swapXZPos === true) ? '0.1,0.0,0.0' : '0.0,0.0,0.1';
-        buffer = "{" + buffer + ",Motion:\[" +  + "\]}";
+        buffer = "{" + buffer + ",Motion:\[" + motionMCB + "\]}";
         return buffer;
     } else {
         buffer = "id:\"command_block_minecart\"";
