@@ -581,10 +581,11 @@ function generateCommandFinal(commandList) {
         return "No Input!"
     }
     setBlockReorder(commandList);
+    console.log(commandList);
     var command = "/summon command_block_minecart ~-2 ~ ~ " + _tagBuilder(commandList);
     return command;
 }
-
+//Core Logic
 function _tagBuilder(_commandList, current, addComma = false) {
     var buffer;
     var Listlength = _commandList.length;

@@ -34,6 +34,25 @@
     vertical-align: middle;
 }
 
+.swap {
+    margin-left: 10px;
+}
+
+.swap>input {
+    border-color: #5c5c5c;
+    border-width: 2px;
+    border-style: solid;
+    outline: none;
+}
+
+.swap>input:hover {
+    border-color: #3863ff;
+}
+
+.swap>input:focus {
+    border-color: #0046c5;
+}
+
 .m0_inputInnerLeft {
     height: 100%;
     width: 100%;
