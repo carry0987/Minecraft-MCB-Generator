@@ -387,7 +387,7 @@ inputModeList[3].getTitle = function() {
         suffix = " " + suffix;
     }
     var title;
-    title = "RawCommand :" + prefix + "((" + x0 + "," + y0 + "," + z0 + ") ~ (" + x1 + "," + y1 + "," + z1 + ") ,space:" + space + ")" + suffix;
+    title = "RawCommand : " + prefix + "((" + x0 + "," + y0 + "," + z0 + ") ~ (" + x1 + "," + y1 + "," + z1 + ") ,space:" + space + ")" + suffix;
     return title;
 };
 
@@ -562,11 +562,6 @@ function getSetBlockCommand(x, y, z, id, meta, nbt) {
     var command;
     meta = meta || "0";
 
-    if ($("#auto_relative").prop('checked')) {
-        x = (String(x).search("~") !== -1) ? x : "~" + x;
-        y = (String(y).search("~") !== -1) ? y : "~" + y;
-        z = (String(z).search("~") !== -1) ? z : "~" + z;
-    }
     command = "setblock " + x + " " + y + " " + z + " minecraft:" + id;
     if ((meta !== "0")) {
         command = command + " " + meta;
@@ -1081,6 +1076,7 @@ var initOutputBox = function initOutputBox() {
     var pos1;
     var position;
     var regexMode2 = /^Area\ \/setblock\ pos\:\(([\-\~\d,]*)\)\ \~\ \(([\-\~\d,]*)\)\ id\:([\[\w\]\=\,\!]*)(?:\ meta\:(\d+))?(?:\ NbtTag\:(.*))?/;
+    var regexMode3 = /^RawCommand : (\w+)\ \(\(([\-\~\d,]*)\)\ \~\ \(([\-\~\d,]*)\)\ ,space\:(\d+)\)\ (.*)?/;
     var MCBStorage = getValue("MCB", true);
     for (var key in MCBStorage) {
         multiBlock = MCBStorage[key].match(regexMode2);
@@ -1089,6 +1085,14 @@ var initOutputBox = function initOutputBox() {
             pos1 = multiBlock[2].split(',', 3);
             position = pos0.concat(pos1);
             appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), MCBStorage[key], key);
+        } else {
+            multiBlock = MCBStorage[key].match(regexMode3);
+            if (multiBlock) {
+                pos0 = multiBlock[2].split(',', 3);
+                pos1 = multiBlock[3].split(',', 3);
+                position = pos0.concat(pos1);
+                appendCommandCollection(getMultiRawCommand(...position, multiBlock[1], multiBlock[4], multiBlock[5]), MCBStorage[key], key);
+            }
         } else {
             appendCommand(MCBStorage[key], key);
         }
