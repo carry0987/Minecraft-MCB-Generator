@@ -1057,6 +1057,7 @@ function onClickSwitchMode() {
     switchMode();
 }
 
+//Check and Set Swap function
 function onClickSwapPos() {
     $("#commandText").text('');
     swapXZPos = (swapXZPos === false) ? true : false;
