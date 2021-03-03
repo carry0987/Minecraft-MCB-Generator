@@ -411,7 +411,7 @@ function addBlock(id, inf) {
         .appendTo("#displayInput")
         .slideDown(200);
     if (swapXZPos === true) { $('#'+id).addClass('blockSetSwap'); }
-    $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 300);
+    $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 150);
 }
 
 function addBlockCollection(id, inf) {
@@ -431,7 +431,7 @@ function addBlockCollection(id, inf) {
         .appendTo("#displayInput")
         .slideDown(200);
     if (swapXZPos === true) { $('#'+id).addClass('blockSetSwap'); }
-    $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 300);
+    $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 150);
 }
 
 function addBlockCollectionHigh(id, inf) {
@@ -451,7 +451,7 @@ function addBlockCollectionHigh(id, inf) {
         .appendTo("#displayInput")
         .slideDown(200);
     if (swapXZPos === true) { $('#'+id).addClass('blockSetSwap'); }
-    $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 300);
+    $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 150);
 }
 
 //Command List
