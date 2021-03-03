@@ -764,6 +764,7 @@ function getMultiRawCommand(x0, y0, z0, x1, y1, z1, prefix, space, suffix) {
 
 function setBlockReorder(commandList) {
     var setBlockFormat = /(\/?setblock) (~?-?\d+|~) (~?-?\d+|~) (~?-?\d+|~) ([\w\d:]+)( \d+)?( replace| keep| destroy)?( [^\n\r]+)?/g;
+    //Not sure the influence of block order in MC 1.16+
     var lastBlock = ["26", "27", "28", "29", "31", "32", "33", "37", "38", "39", "40", "51", "55", "59", "63", "65", "66", "69", "70", "72", "75", "76", "77", "78", "96", "104", "105", "106", "111", "115", "127", "131", "141", "142", "143", "147", "148", "149", "150", "157", "171", "175"];
     var finalBlock = ["6", "29", "33", "34", "36", "64", "68", "71", "81", "83", "92"];
     var setblockCommandList = [];
