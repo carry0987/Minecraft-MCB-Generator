@@ -410,6 +410,7 @@ function addBlock(id, inf) {
         .hide()
         .appendTo("#displayInput")
         .slideDown(200);
+    if (swapXZPos === true) { $('#'+id).addClass('blockSetSwap'); }
     $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 300);
 }
 
@@ -429,6 +430,7 @@ function addBlockCollection(id, inf) {
         .hide()
         .appendTo("#displayInput")
         .slideDown(200);
+    if (swapXZPos === true) { $('#'+id).addClass('blockSetSwap'); }
     $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 300);
 }
 
@@ -448,6 +450,7 @@ function addBlockCollectionHigh(id, inf) {
         .hide()
         .appendTo("#displayInput")
         .slideDown(200);
+    if (swapXZPos === true) { $('#'+id).addClass('blockSetSwap'); }
     $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 300);
 }
 
@@ -1122,7 +1125,7 @@ function onClickSwapPos() {
                     y = singleBlock[2]+" ";
                     z = singleBlock[3]+" ";
                     singleBlock = 'setblock '+z+y+x+'minecraft:'+singleBlock[4]+" "+singleBlock[5];
-                    singleBlock = singleBlock.replace('rail ', 'rail[shape=east_west]');
+                    singleBlock = singleBlock.replace('rail ', 'rail[shape=east_west] ');
                     appendCommand(singleBlock, false);
                 } else {
                     appendCommand(MCBStorage[key], false);

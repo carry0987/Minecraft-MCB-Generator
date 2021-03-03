@@ -302,6 +302,12 @@
     /* for Chrome */
 }
 
+/* Style for swap */
+.blockSetSwap {
+    background: #f0ec8c;
+}
+/* Style for swap END */
+
 input {
     border-radius: 4px;
 }
