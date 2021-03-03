@@ -1071,6 +1071,10 @@ function onClickSwapPos() {
     //Switch swap function
     swapXZPos = (swapXZPos === false) ? true : false;
     if (swapXZPos === true) {
+        var x;
+        var y;
+        var z;
+        var singleBlock;
         var multiBlock;
         var pos0;
         var pos1;
@@ -1083,20 +1087,45 @@ function onClickSwapPos() {
             multiBlock = MCBStorage[key].match(regexMode2);
             if (multiBlock) {
                 pos0 = multiBlock[1].split(',', 3);
+                x = pos0[0];
+                z = pos0[2];
+                pos0[0] = z;
+                pos0[2] = x;
                 pos1 = multiBlock[2].split(',', 3);
+                x = pos1[0];
+                z = pos1[2];
+                pos1[0] = z;
+                pos1[2] = x;
                 position = pos0.concat(pos1);
                 appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), MCBStorage[key], false);
             } else {
                 multiBlock = MCBStorage[key].match(regexMode3);
                 if (multiBlock) {
                     pos0 = multiBlock[2].split(',', 3);
+                    x = pos0[0];
+                    z = pos0[2];
+                    pos0[0] = z;
+                    pos0[2] = x;
                     pos1 = multiBlock[3].split(',', 3);
+                    x = pos1[0];
+                    z = pos1[2];
+                    pos1[0] = z;
+                    pos1[2] = x;
                     position = pos0.concat(pos1);
                     appendCommandCollection(getMultiRawCommand(...position, multiBlock[1], multiBlock[4], multiBlock[5]), MCBStorage[key], false);
                 }
             }
             if (multiBlock == null) {
-                appendCommand(MCBStorage[key], false);
+                singleBlock = MCBStorage[key].match(regexMode01);
+                if (singleBlock) {
+                    x = singleBlock[1]+" ";
+                    y = singleBlock[2]+" ";
+                    z = singleBlock[3]+" ";
+                    singleBlock = 'setblock '+z+y+x+'minecraft:'+singleBlock[4]+" "+singleBlock[5];
+                    appendCommand(singleBlock, false);
+                } else {
+                    appendCommand(MCBStorage[key], false);
+                }
             }
         }
     } else {
