@@ -473,6 +473,9 @@ function appendCommandCollectionHigh(id, command, display, addMCB = true) {
 }
 
 function addMCBStorage(storageName, id, command, addMCB) {
+    if (addMCB === false) {
+        return;
+    }
     var addStorage = getValue(storageName, true);
     if (addMCB === true) {
         addStorage = (addStorage == null) ? {} : addStorage;
@@ -1082,18 +1085,18 @@ function onClickSwapPos() {
                 pos0 = multiBlock[1].split(',', 3);
                 pos1 = multiBlock[2].split(',', 3);
                 position = pos0.concat(pos1);
-                appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), MCBStorage[key], key);
+                appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), MCBStorage[key], false);
             } else {
                 multiBlock = MCBStorage[key].match(regexMode3);
                 if (multiBlock) {
                     pos0 = multiBlock[2].split(',', 3);
                     pos1 = multiBlock[3].split(',', 3);
                     position = pos0.concat(pos1);
-                    appendCommandCollection(getMultiRawCommand(...position, multiBlock[1], multiBlock[4], multiBlock[5]), MCBStorage[key], key);
+                    appendCommandCollection(getMultiRawCommand(...position, multiBlock[1], multiBlock[4], multiBlock[5]), MCBStorage[key], false);
                 }
             }
             if (multiBlock == null) {
-                appendCommand(MCBStorage[key], key);
+                appendCommand(MCBStorage[key], false);
             }
         }
     } else {
