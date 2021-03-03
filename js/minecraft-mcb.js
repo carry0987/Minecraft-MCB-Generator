@@ -1122,6 +1122,7 @@ function onClickSwapPos() {
                     y = singleBlock[2]+" ";
                     z = singleBlock[3]+" ";
                     singleBlock = 'setblock '+z+y+x+'minecraft:'+singleBlock[4]+" "+singleBlock[5];
+                    singleBlock = singleBlock.replace('rail ', 'rail[shape=east_west]');
                     appendCommand(singleBlock, false);
                 } else {
                     appendCommand(MCBStorage[key], false);
@@ -1129,7 +1130,7 @@ function onClickSwapPos() {
             }
         }
     } else {
-        initInputBox();
+        initOutputBox();
     }
 }
 
