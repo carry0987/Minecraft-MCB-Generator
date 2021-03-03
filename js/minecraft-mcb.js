@@ -1060,7 +1060,45 @@ function onClickSwitchMode() {
 //Check and Set Swap function
 function onClickSwapPos() {
     $("#commandText").text('');
+    //Clear generated command
+    commandList = {};
+    commandCollectionList = {};
+    const clearList = document.getElementById('displayInput')
+    clearList.textContent = '';
+    //Switch swap function
     swapXZPos = (swapXZPos === false) ? true : false;
+    if (swapXZPos === true) {
+        var multiBlock;
+        var pos0;
+        var pos1;
+        var position;
+        var regexMode01 = /^\/?setblock ([\-\~\d]*) ([\-\~\d]*) ([\-\~\d]*) minecraft:(.*) (.*)/;
+        var regexMode2 = /^Area\ \/setblock\ pos\:\(([\-\~\d,]*)\)\ \~\ \(([\-\~\d,]*)\)\ id\:([\[\w\]\=\,\!]*)(?:\ meta\:(\d+))?(?:\ NbtTag\:(.*))?/;
+        var regexMode3 = /^RawCommand : (\w+)\ \(\(([\-\~\d,]*)\)\ \~\ \(([\-\~\d,]*)\)\ ,space\:(\d+)\)\ (.*)?/;
+        var MCBStorage = getValue("MCB", true);
+        for (var key in MCBStorage) {
+            multiBlock = MCBStorage[key].match(regexMode2);
+            if (multiBlock) {
+                pos0 = multiBlock[1].split(',', 3);
+                pos1 = multiBlock[2].split(',', 3);
+                position = pos0.concat(pos1);
+                appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), MCBStorage[key], key);
+            } else {
+                multiBlock = MCBStorage[key].match(regexMode3);
+                if (multiBlock) {
+                    pos0 = multiBlock[2].split(',', 3);
+                    pos1 = multiBlock[3].split(',', 3);
+                    position = pos0.concat(pos1);
+                    appendCommandCollection(getMultiRawCommand(...position, multiBlock[1], multiBlock[4], multiBlock[5]), MCBStorage[key], key);
+                }
+            }
+            if (multiBlock == null) {
+                appendCommand(MCBStorage[key], key);
+            }
+        }
+    } else {
+        initInputBox();
+    }
 }
 
 //Init
