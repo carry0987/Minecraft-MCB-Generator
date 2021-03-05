@@ -5,16 +5,16 @@ var inputBoxInfo = [];
 
 //Set for Mode 0
 inputBoxInfo[0] = [];
-inputBoxInfo[0].modeClass = ["inputMode0_display"];
-inputBoxInfo[0].textClass = ["inputMode0"];
-inputBoxInfo[0].inputBoxIdList = ["m0_x", "m0_y", "m0_z", "m0_id", "m0_meta", "m0_nbtTag"];
+inputBoxInfo[0].modeClass = ['inputMode0_display'];
+inputBoxInfo[0].textClass = ['inputMode0'];
+inputBoxInfo[0].inputBoxIdList = ['m0_x', 'm0_y', 'm0_z', 'm0_id', 'm0_meta', 'm0_nbtTag'];
 inputBoxInfo[0].inputBoxDisplayDefault = {
-    m0_x: "X",
-    m0_y: "Y",
-    m0_z: "Z",
-    m0_id: "id",
-    m0_meta: "meta",
-    m0_nbtTag: "NbtTag"
+    m0_x: 'X',
+    m0_y: 'Y',
+    m0_z: 'Z',
+    m0_id: 'id',
+    m0_meta: 'meta',
+    m0_nbtTag: 'NbtTag'
 };
 inputBoxInfo[0].isInputBoxEnabled = {
     m0_x: false,
@@ -25,12 +25,12 @@ inputBoxInfo[0].isInputBoxEnabled = {
     m0_nbtTag: false
 };
 inputBoxInfo[0].inputBoxDefault = {
-    m0_x: "0",
-    m0_y: "0",
-    m0_z: "0",
-    m0_id: "0",
-    m0_meta: "0",
-    m0_nbtTag: ""
+    m0_x: '0',
+    m0_y: '0',
+    m0_z: '0',
+    m0_id: '0',
+    m0_meta: '0',
+    m0_nbtTag: ''
 };
 inputBoxInfo[0].inputBoxForce = {
     m0_x: true,
@@ -51,17 +51,17 @@ inputBoxInfo[0].inputBoxFormat = {
 
 //Set for Mode 1
 inputBoxInfo[1] = [];
-inputBoxInfo[1].modeClass = ["inputMode1_display"];
-inputBoxInfo[1].textClass = ["inputMode1"];
-inputBoxInfo[1].inputBoxIdList = ["m1_rawCommand"];
+inputBoxInfo[1].modeClass = ['inputMode1_display'];
+inputBoxInfo[1].textClass = ['inputMode1'];
+inputBoxInfo[1].inputBoxIdList = ['m1_rawCommand'];
 inputBoxInfo[1].inputBoxDisplayDefault = {
-    m1_rawCommand: "Command"
+    m1_rawCommand: 'Command'
 };
 inputBoxInfo[1].isInputBoxEnabled = {
     m1_rawCommand: false
 };
 inputBoxInfo[1].inputBoxDefault = {
-    m1_rawCommand: ""
+    m1_rawCommand: ''
 };
 inputBoxInfo[1].inputBoxForce = {
     m1_rawCommand: true
@@ -72,19 +72,19 @@ inputBoxInfo[1].inputBoxFormat = {
 
 //Set for Mode 2
 inputBoxInfo[2] = [];
-inputBoxInfo[2].modeClass = ["inputMode2_display"];
-inputBoxInfo[2].textClass = ["inputMode2"];
-inputBoxInfo[2].inputBoxIdList = ["m2_x0", "m2_y0", "m2_z0", "m2_x1", "m2_y1", "m2_z1", "m2_id", "m2_meta", "m2_nbtTag"];
+inputBoxInfo[2].modeClass = ['inputMode2_display'];
+inputBoxInfo[2].textClass = ['inputMode2'];
+inputBoxInfo[2].inputBoxIdList = ['m2_x0', 'm2_y0', 'm2_z0', 'm2_x1', 'm2_y1', 'm2_z1', 'm2_id', 'm2_meta', 'm2_nbtTag'];
 inputBoxInfo[2].inputBoxDisplayDefault = {
-    m2_x0: "X1",
-    m2_y0: "Y1",
-    m2_z0: "Z1",
-    m2_x1: "X2",
-    m2_y1: "Y2",
-    m2_z1: "Z2",
-    m2_id: "id",
-    m2_meta: "meta",
-    m2_nbtTag: "NbtTag"
+    m2_x0: 'X1',
+    m2_y0: 'Y1',
+    m2_z0: 'Z1',
+    m2_x1: 'X2',
+    m2_y1: 'Y2',
+    m2_z1: 'Z2',
+    m2_id: 'id',
+    m2_meta: 'meta',
+    m2_nbtTag: 'NbtTag'
 };
 inputBoxInfo[2].isInputBoxEnabled = {
     m2_x0: false,
@@ -98,15 +98,15 @@ inputBoxInfo[2].isInputBoxEnabled = {
     m2_nbtTag: false
 };
 inputBoxInfo[2].inputBoxDefault = {
-    m2_x0: "0",
-    m2_y0: "0",
-    m2_z0: "0",
-    m2_x1: "0",
-    m2_y1: "0",
-    m2_z1: "0",
-    m2_id: "0",
-    m2_meta: "0",
-    m2_nbtTag: ""
+    m2_x0: '0',
+    m2_y0: '0',
+    m2_z0: '0',
+    m2_x1: '0',
+    m2_y1: '0',
+    m2_z1: '0',
+    m2_id: '0',
+    m2_meta: '0',
+    m2_nbtTag: ''
 };
 inputBoxInfo[2].inputBoxForce = {
     m2_x0: true,
@@ -133,19 +133,19 @@ inputBoxInfo[2].inputBoxFormat = {
 
 //Set for Mode 3
 inputBoxInfo[3] = [];
-inputBoxInfo[3].modeClass = ["inputMode3_display"];
-inputBoxInfo[3].textClass = ["inputMode3"];
-inputBoxInfo[3].inputBoxIdList = ["m3_prefix", "m3_x0", "m3_y0", "m3_z0", "m3_x1", "m3_y1", "m3_z1", "m3_space", "m3_suffix"];
+inputBoxInfo[3].modeClass = ['inputMode3_display'];
+inputBoxInfo[3].textClass = ['inputMode3'];
+inputBoxInfo[3].inputBoxIdList = ['m3_prefix', 'm3_x0', 'm3_y0', 'm3_z0', 'm3_x1', 'm3_y1', 'm3_z1', 'm3_space', 'm3_suffix'];
 inputBoxInfo[3].inputBoxDisplayDefault = {
-    m3_prefix: "Prefix",
-    m3_x0: "X1",
-    m3_y0: "Y1",
-    m3_z0: "Z1",
-    m3_x1: "X2",
-    m3_y1: "Y2",
-    m3_z1: "Z2",
-    m3_space: "Space",
-    m3_suffix: "Suffix"
+    m3_prefix: 'Prefix',
+    m3_x0: 'X1',
+    m3_y0: 'Y1',
+    m3_z0: 'Z1',
+    m3_x1: 'X2',
+    m3_y1: 'Y2',
+    m3_z1: 'Z2',
+    m3_space: 'Space',
+    m3_suffix: 'Suffix'
 };
 inputBoxInfo[3].isInputBoxEnabled = {
     m3_prefix: false,
@@ -159,15 +159,15 @@ inputBoxInfo[3].isInputBoxEnabled = {
     m3_suffix: false
 };
 inputBoxInfo[3].inputBoxDefault = {
-    m3_prefix: "",
-    m3_x0: "0",
-    m3_y0: "0",
-    m3_z0: "0",
-    m3_x1: "0",
-    m3_y1: "0",
-    m3_z1: "0",
-    m3_space: "0",
-    m3_suffix: "0"
+    m3_prefix: '',
+    m3_x0: '0',
+    m3_y0: '0',
+    m3_z0: '0',
+    m3_x1: '0',
+    m3_y1: '0',
+    m3_z1: '0',
+    m3_space: '0',
+    m3_suffix: '0'
 };
 inputBoxInfo[3].inputBoxForce = {
     m3_prefix: true,
@@ -213,20 +213,20 @@ inputModeList[0].addBlockListener = function() {
 };
 inputModeList[0].getCurrentInput = function() {
     var relativePos;
-    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
-    var x = getSingleInput("m0_x", false, relativePos);
-    var y = getSingleInput("m0_y", false, relativePos);
-    var z = getSingleInput("m0_z", false, relativePos);
-    var id = getSingleInput("m0_id");
-    var meta = getSingleInput("m0_meta");
-    var nbt = getSingleInput("m0_nbtTag");
+    relativePos = ($('#auto_relative').prop('checked')) ? true : false;
+    var x = getSingleInput('m0_x', false, relativePos);
+    var y = getSingleInput('m0_y', false, relativePos);
+    var z = getSingleInput('m0_z', false, relativePos);
+    var id = getSingleInput('m0_id');
+    var meta = getSingleInput('m0_meta');
+    var nbt = getSingleInput('m0_nbtTag');
     return getSetBlockCommand(x, y, z, id, meta, nbt);
 };
 
 //Input mode 1
 inputModeList[1] = {};
 inputModeList[1].addBlockListener = function() {
-    if (finalCheck(".inputMode1")) {
+    if (finalCheck('.inputMode1')) {
         appendCommand(inputModeList[1].getCurrentInput());
         resetInput();
         return true;
@@ -235,7 +235,7 @@ inputModeList[1].addBlockListener = function() {
     }
 };
 inputModeList[1].getCurrentInput = function() {
-    var command = getSingleInput("m1_rawCommand");
+    var command = getSingleInput('m1_rawCommand');
     return command;
 };
 
@@ -252,66 +252,66 @@ inputModeList[2].addBlockListener = function() {
 };
 inputModeList[2].getCurrentInput = function() {
     var relativePos;
-    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
-    var x0 = getSingleInput("m2_x0", false, relativePos);
-    var y0 = getSingleInput("m2_y0", false, relativePos);
-    var z0 = getSingleInput("m2_z0", false, relativePos);
-    var x1 = getSingleInput("m2_x1", false, relativePos);
-    var y1 = getSingleInput("m2_y1", false, relativePos);
-    var z1 = getSingleInput("m2_z1", false, relativePos);
-    var id = getSingleInput("m2_id", true);
-    var meta = getSingleInput("m2_meta");
-    var nbt = getSingleInput("m2_nbtTag");
+    relativePos = ($('#auto_relative').prop('checked')) ? true : false;
+    var x0 = getSingleInput('m2_x0', false, relativePos);
+    var y0 = getSingleInput('m2_y0', false, relativePos);
+    var z0 = getSingleInput('m2_z0', false, relativePos);
+    var x1 = getSingleInput('m2_x1', false, relativePos);
+    var y1 = getSingleInput('m2_y1', false, relativePos);
+    var z1 = getSingleInput('m2_z1', false, relativePos);
+    var id = getSingleInput('m2_id', true);
+    var meta = getSingleInput('m2_meta');
+    var nbt = getSingleInput('m2_nbtTag');
     return getMultiSetBlockCommand(x0, y0, z0, x1, y1, z1, id, meta, nbt);
 };
 inputModeList[2].additionCheck = function() {
     var isCorrect = true;
     var relativePos;
-    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
-    var x0 = getSingleInput("m2_x0", false, relativePos);
-    var y0 = getSingleInput("m2_y0", false, relativePos);
-    var z0 = getSingleInput("m2_z0", false, relativePos);
-    var x1 = getSingleInput("m2_x1", false, relativePos);
-    var y1 = getSingleInput("m2_y1", false, relativePos);
-    var z1 = getSingleInput("m2_z1", false, relativePos);
-    if ((x0.search("~") === -1) !== (x1.search("~") === -1)) {
+    relativePos = ($('#auto_relative').prop('checked')) ? true : false;
+    var x0 = getSingleInput('m2_x0', false, relativePos);
+    var y0 = getSingleInput('m2_y0', false, relativePos);
+    var z0 = getSingleInput('m2_z0', false, relativePos);
+    var x1 = getSingleInput('m2_x1', false, relativePos);
+    var y1 = getSingleInput('m2_y1', false, relativePos);
+    var z1 = getSingleInput('m2_z1', false, relativePos);
+    if ((x0.search('~') === -1) !== (x1.search('~') === -1)) {
         isCorrect = false;
-        $("#m2_x0").addClass("badFormat");
-        $("#m2_x1").addClass("badFormat");
+        $('#m2_x0').addClass('badFormat');
+        $('#m2_x1').addClass('badFormat');
     }
-    if ((y0.search("~") === -1) !== (y1.search("~") === -1)) {
+    if ((y0.search('~') === -1) !== (y1.search('~') === -1)) {
         isCorrect = false;
-        $("#m2_y0").addClass("badFormat");
-        $("#m2_y1").addClass("badFormat");
+        $('#m2_y0').addClass('badFormat');
+        $('#m2_y1').addClass('badFormat');
     }
-    if ((z0.search("~") === -1) !== (z1.search("~") === -1)) {
+    if ((z0.search('~') === -1) !== (z1.search('~') === -1)) {
         isCorrect = false;
-        $("#m2_z0").addClass("badFormat");
-        $("#m2_z1").addClass("badFormat");
+        $('#m2_z0').addClass('badFormat');
+        $('#m2_z1').addClass('badFormat');
     }
     return isCorrect;
 };
 inputModeList[2].getTitle = function() {
     var relativePos;
-    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
-    var x0 = getSingleInput("m2_x0", false, relativePos);
-    var y0 = getSingleInput("m2_y0", false, relativePos);
-    var z0 = getSingleInput("m2_z0", false, relativePos);
-    var x1 = getSingleInput("m2_x1", false, relativePos);
-    var y1 = getSingleInput("m2_y1", false, relativePos);
-    var z1 = getSingleInput("m2_z1", false, relativePos);
-    var id = getSingleInput("m2_id", true);
-    var meta = getSingleInput("m2_meta");
-    var nbt = getSingleInput("m2_nbtTag");
+    relativePos = ($('#auto_relative').prop('checked')) ? true : false;
+    var x0 = getSingleInput('m2_x0', false, relativePos);
+    var y0 = getSingleInput('m2_y0', false, relativePos);
+    var z0 = getSingleInput('m2_z0', false, relativePos);
+    var x1 = getSingleInput('m2_x1', false, relativePos);
+    var y1 = getSingleInput('m2_y1', false, relativePos);
+    var z1 = getSingleInput('m2_z1', false, relativePos);
+    var id = getSingleInput('m2_id', true);
+    var meta = getSingleInput('m2_meta');
+    var nbt = getSingleInput('m2_nbtTag');
     var title;
-    meta = meta || "0";
+    meta = meta || '0';
     id = (id.search('minecraft:') !== -1) ? id : 'minecraft:' + id;
-    title = "Area /setblock pos:(" + x0 + "," + y0 + "," + z0 + ") ~ (" + x1 + "," + y1 + "," + z1 + ") id:" + id;
-    if (meta !== "0") {
-        title = title + " meta:" + meta;
+    title = 'Area /setblock pos:(' + x0 + ',' + y0 + ',' + z0 + ') ~ (' + x1 + ',' + y1 + ',' + z1 + ') id:' + id;
+    if (meta !== '0') {
+        title = title + ' meta:' + meta;
     }
     if (nbt) {
-        title = title + " NbtTag:" + nbt;
+        title = title + ' NbtTag:' + nbt;
     }
     return title;
 };
@@ -328,130 +328,130 @@ inputModeList[3].addBlockListener = function() {
     }
 };
 inputModeList[3].getCurrentInput = function() {
-    var prefix = getSingleInput("m3_prefix");
+    var prefix = getSingleInput('m3_prefix');
     var relativePos;
-    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
-    var x0 = getSingleInput("m3_x0", false, relativePos);
-    var y0 = getSingleInput("m3_y0", false, relativePos);
-    var z0 = getSingleInput("m3_z0", false, relativePos);
-    var x1 = getSingleInput("m3_x1", false, relativePos);
-    var y1 = getSingleInput("m3_y1", false, relativePos);
-    var z1 = getSingleInput("m3_z1", false, relativePos);
-    var space = getSingleInput("m3_space");
-    var suffix = getSingleInput("m3_suffix");
+    relativePos = ($('#auto_relative').prop('checked')) ? true : false;
+    var x0 = getSingleInput('m3_x0', false, relativePos);
+    var y0 = getSingleInput('m3_y0', false, relativePos);
+    var z0 = getSingleInput('m3_z0', false, relativePos);
+    var x1 = getSingleInput('m3_x1', false, relativePos);
+    var y1 = getSingleInput('m3_y1', false, relativePos);
+    var z1 = getSingleInput('m3_z1', false, relativePos);
+    var space = getSingleInput('m3_space');
+    var suffix = getSingleInput('m3_suffix');
     return getMultiRawCommand(x0, y0, z0, x1, y1, z1, prefix, space, suffix);
 };
 inputModeList[3].additionCheck = function() {
     var isCorrect = true;
     var relativePos;
-    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
-    var x0 = getSingleInput("m3_x0", false, relativePos);
-    var y0 = getSingleInput("m3_y0", false, relativePos);
-    var z0 = getSingleInput("m3_z0", false, relativePos);
-    var x1 = getSingleInput("m3_x1", false, relativePos);
-    var y1 = getSingleInput("m3_y1", false, relativePos);
-    var z1 = getSingleInput("m3_z1", false, relativePos);
-    if ((x0.search("~") === -1) !== (x1.search("~") === -1)) {
+    relativePos = ($('#auto_relative').prop('checked')) ? true : false;
+    var x0 = getSingleInput('m3_x0', false, relativePos);
+    var y0 = getSingleInput('m3_y0', false, relativePos);
+    var z0 = getSingleInput('m3_z0', false, relativePos);
+    var x1 = getSingleInput('m3_x1', false, relativePos);
+    var y1 = getSingleInput('m3_y1', false, relativePos);
+    var z1 = getSingleInput('m3_z1', false, relativePos);
+    if ((x0.search('~') === -1) !== (x1.search('~') === -1)) {
         isCorrect = false;
-        $("#m3_x0").addClass("badFormat");
-        $("#m3_x1").addClass("badFormat");
+        $('#m3_x0').addClass('badFormat');
+        $('#m3_x1').addClass('badFormat');
     }
-    if ((y0.search("~") === -1) !== (y1.search("~") === -1)) {
+    if ((y0.search('~') === -1) !== (y1.search('~') === -1)) {
         isCorrect = false;
-        $("#m3_y0").addClass("badFormat");
-        $("#m3_y1").addClass("badFormat");
+        $('#m3_y0').addClass('badFormat');
+        $('#m3_y1').addClass('badFormat');
     }
-    if ((z0.search("~") === -1) !== (z1.search("~") === -1)) {
+    if ((z0.search('~') === -1) !== (z1.search('~') === -1)) {
         isCorrect = false;
-        $("#m3_z0").addClass("badFormat");
-        $("#m3_z1").addClass("badFormat");
+        $('#m3_z0').addClass('badFormat');
+        $('#m3_z1').addClass('badFormat');
     }
     return isCorrect;
 };
 inputModeList[3].getTitle = function() {
-    var prefix = getSingleInput("m3_prefix");
+    var prefix = getSingleInput('m3_prefix');
     var relativePos;
-    relativePos = ($("#auto_relative").prop('checked')) ? true : false;
-    var x0 = getSingleInput("m3_x0", false, relativePos);
-    var y0 = getSingleInput("m3_y0", false, relativePos);
-    var z0 = getSingleInput("m3_z0", false, relativePos);
-    var x1 = getSingleInput("m3_x1", false, relativePos);
-    var y1 = getSingleInput("m3_y1", false, relativePos);
-    var z1 = getSingleInput("m3_z1", false, relativePos);
-    var space = getSingleInput("m3_space");
-    var suffix = getSingleInput("m3_suffix");
+    relativePos = ($('#auto_relative').prop('checked')) ? true : false;
+    var x0 = getSingleInput('m3_x0', false, relativePos);
+    var y0 = getSingleInput('m3_y0', false, relativePos);
+    var z0 = getSingleInput('m3_z0', false, relativePos);
+    var x1 = getSingleInput('m3_x1', false, relativePos);
+    var y1 = getSingleInput('m3_y1', false, relativePos);
+    var z1 = getSingleInput('m3_z1', false, relativePos);
+    var space = getSingleInput('m3_space');
+    var suffix = getSingleInput('m3_suffix');
     space = parseInt(space, 10) || 1;
-    suffix = suffix || "";
+    suffix = suffix || '';
     if (prefix.search(/ +$/g) === -1) {
-        prefix = prefix + " ";
+        prefix = prefix + ' ';
     }
-    if ((suffix !== "") && (suffix.search(/^ +/g) === -1)) {
-        suffix = " " + suffix;
+    if ((suffix !== '') && (suffix.search(/^ +/g) === -1)) {
+        suffix = ' ' + suffix;
     }
     var title;
-    title = "RawCommand : " + prefix + "((" + x0 + "," + y0 + "," + z0 + ") ~ (" + x1 + "," + y1 + "," + z1 + ") ,space:" + space + ")" + suffix;
+    title = 'RawCommand : ' + prefix + '((' + x0 + ',' + y0 + ',' + z0 + ') ~ (' + x1 + ',' + y1 + ',' + z1 + ') ,space:' + space + ')' + suffix;
     return title;
 };
 
 //Display Block Control
 function addBlock(id, inf) {
-    $("<div></div>")
-        .attr("id", id)
-        .attr("unselectable", "on")
-        .addClass("blockSet")
+    $('<div></div>')
+        .attr('id', id)
+        .attr('unselectable', 'on')
+        .addClass('blockSet')
         .text(inf)
         .click(function() {
             $(this).slideUp(100, function() {
-                commandList[$(this).attr("id")] = null;
-                deleteMCBStorage("MCB", id);
+                commandList[$(this).attr('id')] = null;
+                deleteMCBStorage('MCB', id);
                 $(this).remove();
             });
         })
         .hide()
-        .appendTo("#displayInput")
+        .appendTo('#displayInput')
         .slideDown(200);
     if (swapXZPos === true) { $('#'+id).addClass('blockSetSwap'); }
-    $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 150);
+    $('#displayInput').animate({ scrollTop: $('#' + id).offset().top }, 150);
 }
 
 function addBlockCollection(id, inf) {
-    $("<div></div>")
-        .attr("id", id)
-        .attr("unselectable", "on")
-        .addClass("blockSetCollection")
+    $('<div></div>')
+        .attr('id', id)
+        .attr('unselectable', 'on')
+        .addClass('blockSetCollection')
         .text(inf)
         .click(function() {
             $(this).slideUp(100, function() {
-                commandCollectionList[$(this).attr("id")] = null;
-                deleteMCBStorage("MCB", id);
+                commandCollectionList[$(this).attr('id')] = null;
+                deleteMCBStorage('MCB', id);
                 $(this).remove();
             });
         })
         .hide()
-        .appendTo("#displayInput")
+        .appendTo('#displayInput')
         .slideDown(200);
     if (swapXZPos === true) { $('#'+id).addClass('blockSetSwap'); }
-    $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 150);
+    $('#displayInput').animate({ scrollTop: $('#' + id).offset().top }, 150);
 }
 
 function addBlockCollectionHigh(id, inf) {
-    $("<div></div>")
-        .attr("id", id)
-        .attr("unselectable", "on")
-        .addClass("blockSetCollectionHigh")
+    $('<div></div>')
+        .attr('id', id)
+        .attr('unselectable', 'on')
+        .addClass('blockSetCollectionHigh')
         .text(inf)
         .click(function() {
             $(this).slideUp(100, function() {
-                commandCollectionList[$(this).attr("id")] = null;
-                deleteMCBStorage("MCB", id);
+                commandCollectionList[$(this).attr('id')] = null;
+                deleteMCBStorage('MCB', id);
                 $(this).remove();
             });
         })
         .hide()
-        .appendTo("#displayInput")
+        .appendTo('#displayInput')
         .slideDown(200);
     if (swapXZPos === true) { $('#'+id).addClass('blockSetSwap'); }
-    $("#displayInput").animate({ scrollTop: $("#" + id).offset().top }, 150);
+    $('#displayInput').animate({ scrollTop: $('#' + id).offset().top }, 150);
 }
 
 //Command List
@@ -459,20 +459,20 @@ function appendCommand(command, addMCB = true) {
     var id = (new Date()).getTime();
     addBlock(id, command);
     commandList[id] = command;
-    addMCBStorage("MCB", id, command, addMCB);
+    addMCBStorage('MCB', id, command, addMCB);
 }
 
 function appendCommandCollection(command, display, addMCB = true) {
     var id = (new Date()).getTime();
     commandCollectionList[id] = command;
     addBlockCollection(id, display);
-    addMCBStorage("MCB", id, display, addMCB);
+    addMCBStorage('MCB', id, display, addMCB);
 }
 
 function appendCommandCollectionHigh(id, command, display, addMCB = true) {
     commandCollectionList[id] = command;
     addBlockCollection(id, display);
-    addMCBStorage("MCB", id, display, addMCB);
+    addMCBStorage('MCB', id, display, addMCB);
 }
 
 function addMCBStorage(storageName, id, command, addMCB) {
@@ -501,10 +501,10 @@ function getSingleInput(id, trimSpace = false, relativePos = false) {
     if (inputBoxInfo[currentInputMode].isInputBoxEnabled[id] === false) {
         return null;
     }
-    var content = $("#" + id).val();
+    var content = $('#' + id).val();
     content = (trimSpace === true) ? content.replace(/\s+/g, '') : content;
     if (relativePos === true) {
-        content = (String(content).search("~") !== -1) ? content : "~" + content;
+        content = (String(content).search('~') !== -1) ? content : '~' + content;
     }
     if (!(content.match(inputBoxInfo[currentInputMode].inputBoxFormat[id])) || (content.match(inputBoxInfo[currentInputMode].inputBoxFormat[id])[0] != content)) {
         return null;
@@ -514,45 +514,45 @@ function getSingleInput(id, trimSpace = false, relativePos = false) {
 
 //InputBox control
 function inputBoxCheck(element) {
-    if (element.value === "") {
+    if (element.value === '') {
         inputBoxDisable(element);
     }
 }
 
 function inputBoxEnable(element) {
     $(element)
-        .removeClass("notEnabled")
-        .val("");
+        .removeClass('notEnabled')
+        .val('');
     inputBoxInfo[currentInputMode].isInputBoxEnabled[element.id] = true;
 }
 
 function inputBoxDisable(element) {
     $(element)
-        .addClass("notEnabled")
+        .addClass('notEnabled')
         .val(inputBoxInfo[currentInputMode].inputBoxDisplayDefault[element.id]);
     inputBoxInfo[currentInputMode].isInputBoxEnabled[element.id] = false;
 }
 
 function resetInput() {
-    $(".inputBox")
+    $('.inputBox')
         .each(function() {
             inputBoxDisable(this);
         })
-        .removeClass("badFormat");
+        .removeClass('badFormat');
 }
 
 function finalCheck() {
     var isCorrrect = true;
 
-    $("." + inputBoxInfo[currentInputMode].textClass).each(function() {
-        var id = $(this).attr("id");
+    $('.' + inputBoxInfo[currentInputMode].textClass).each(function() {
+        var id = $(this).attr('id');
         if (getSingleInput(id)) {
             return;
         } else {
             if (!inputBoxInfo[currentInputMode].inputBoxForce[id]) {
                 return;
             } else {
-                $("#" + id).addClass("badFormat");
+                $('#' + id).addClass('badFormat');
             }
         }
         isCorrrect = false;
@@ -568,17 +568,17 @@ function addBlockListenerAdapter() {
 //Logic
 function getSetBlockCommand(x, y, z, id, meta, nbt) {
     var command;
-    meta = meta || "0";
+    meta = meta || '0';
 
     id = (id.search('minecraft:') !== -1) ? id : 'minecraft:' + id;
-    command = "setblock " + x + " " + y + " " + z + " " + id;
-    if ((meta !== "0")) {
-        command = command + " " + meta;
+    command = 'setblock ' + x + ' ' + y + ' ' + z + ' ' + id;
+    if ((meta !== '0')) {
+        command = command + ' ' + meta;
     }
     if (nbt) {
-        command = command + " " + nbt;
+        command = command + ' ' + nbt;
     } else if (!nbt) {
-        command = command + " replace";
+        command = command + ' replace';
     }
     return command;
 }
@@ -586,11 +586,11 @@ function getSetBlockCommand(x, y, z, id, meta, nbt) {
 function generateCommandFinal(commandList) {
     var posMCB;
     if (!commandList[0]) {
-        return "No Input!"
+        return 'No Input!'
     }
     setBlockReorder(commandList);
     posMCB = (swapXZPos === true) ? '~ ~ ~2' : '~-2 ~ ~';
-    var command = "/summon command_block_minecart " + posMCB + " " + _tagBuilder(commandList);
+    var command = '/summon command_block_minecart ' + posMCB + ' ' + _tagBuilder(commandList);
     return command;
 }
 
@@ -598,47 +598,47 @@ function generateCommandFinal(commandList) {
 function _tagBuilder(_commandList, current, addComma = false) {
     var buffer;
     var Listlength = _commandList.length;
-    var insertComma = (addComma == true) ? "," : "";
+    var insertComma = (addComma == true) ? ',' : '';
     if (Listlength == 1) {
-        buffer = insertComma + "Command:\"" + _commandList[0].replace(/(\"|\\)/g, "\\\"") + "\"";
+        buffer = insertComma + 'Command:"' + _commandList[0].replace(/(\"|\\)/g, "\\\"") + '"';
         if (current) {
-            buffer = "Passengers:\[" + current + "\]" + buffer;
+            buffer = 'Passengers:[' + current + ']' + buffer;
         }
         motionMCB = (swapXZPos === true) ? '0.1,0.0,0.0' : '0.0,0.0,0.1';
-        buffer = "{" + buffer + ",Motion:\[" + motionMCB + "\]}";
+        buffer = '{' + buffer + ',Motion:[' + motionMCB + ']}';
         return buffer;
     } else {
-        buffer = "id:\"command_block_minecart\"";
-        buffer = buffer + ",Command:\"" + _commandList[0].replace(/(\\"|\")/g, "\\$1") + "\"";
+        buffer = 'id:"command_block_minecart"';
+        buffer = buffer + ',Command:"' + _commandList[0].replace(/(\\"|\")/g, "\\$1") + '"';
         if (current) {
-            buffer = buffer + ",Passengers:\[" + current + "\]";
+            buffer = buffer + ',Passengers:[' + current + ']';
         }
-        buffer = "{" + buffer + "}";
+        buffer = '{' + buffer + '}';
         return _tagBuilder(_commandList.slice(1), buffer, true);
     }
 }
 
 function getMultiSetBlockCommand(x0, y0, z0, x1, y1, z1, id, meta, nbt) {
-    var isXRelative = (x0.search("~") !== -1);
-    var isYRelative = (y0.search("~") !== -1);
-    var isZRelative = (z0.search("~") !== -1);
+    var isXRelative = (x0.search('~') !== -1);
+    var isYRelative = (y0.search('~') !== -1);
+    var isZRelative = (z0.search('~') !== -1);
     var i;
     var j;
     var k;
 
     var tempCommandList = [];
-    x0 = x0.replace("~", "");
-    y0 = y0.replace("~", "");
-    z0 = z0.replace("~", "");
-    x1 = x1.replace("~", "");
-    y1 = y1.replace("~", "");
-    z1 = z1.replace("~", "");
-    x0 = (x0 === "") ? 0 : x0;
-    y0 = (y0 === "") ? 0 : y0;
-    z0 = (z0 === "") ? 0 : z0;
-    x1 = (x1 === "") ? 0 : x1;
-    y1 = (y1 === "") ? 0 : y1;
-    z1 = (z1 === "") ? 0 : z1;
+    x0 = x0.replace('~', '');
+    y0 = y0.replace('~', '');
+    z0 = z0.replace('~', '');
+    x1 = x1.replace('~', '');
+    y1 = y1.replace('~', '');
+    z1 = z1.replace('~', '');
+    x0 = (x0 === '') ? 0 : x0;
+    y0 = (y0 === '') ? 0 : y0;
+    z0 = (z0 === '') ? 0 : z0;
+    x1 = (x1 === '') ? 0 : x1;
+    y1 = (y1 === '') ? 0 : y1;
+    z1 = (z1 === '') ? 0 : z1;
     x0 = parseInt(x0, 10);
     y0 = parseInt(y0, 10);
     z0 = parseInt(z0, 10);
@@ -663,9 +663,9 @@ function getMultiSetBlockCommand(x0, y0, z0, x1, y1, z1, id, meta, nbt) {
     for (i = x0; i <= x1; i++) {
         for (j = y0; j <= y1; j++) {
             for (k = z0; k <= z1; k++) {
-                currentX = isXRelative ? ("~" + i) : i;
-                currentY = isXRelative ? ("~" + j) : j;
-                currentZ = isXRelative ? ("~" + k) : k;
+                currentX = isXRelative ? ('~' + i) : i;
+                currentY = isXRelative ? ('~' + j) : j;
+                currentZ = isXRelative ? ('~' + k) : k;
                 tempCommandList.push(getSetBlockCommand(currentX, currentY, currentZ, id, meta, nbt))
             }
         }
@@ -674,16 +674,16 @@ function getMultiSetBlockCommand(x0, y0, z0, x1, y1, z1, id, meta, nbt) {
 }
 
 function getMultiRawCommand(x0, y0, z0, x1, y1, z1, prefix, space, suffix) {
-    var isXRelative = (x0.search("~") !== -1);
-    var isYRelative = (y0.search("~") !== -1);
-    var isZRelative = (z0.search("~") !== -1);
+    var isXRelative = (x0.search('~') !== -1);
+    var isYRelative = (y0.search('~') !== -1);
+    var isZRelative = (z0.search('~') !== -1);
     space = parseInt(space, 10) || 1;
-    suffix = suffix || "";
+    suffix = suffix || '';
     if (prefix.search(/ +$/g) === -1) {
-        prefix = prefix + " ";
+        prefix = prefix + ' ';
     }
-    if ((suffix !== "") && (suffix.search(/^ +/g) === -1)) {
-        suffix = " " + suffix;
+    if ((suffix !== '') && (suffix.search(/^ +/g) === -1)) {
+        suffix = ' ' + suffix;
     }
     var i, j, k;
     var currentX, currentY, currentZ;
@@ -691,18 +691,18 @@ function getMultiRawCommand(x0, y0, z0, x1, y1, z1, prefix, space, suffix) {
     var xCenter, yCenter, zCenter;
     var currentCommand;
     var tempCommandList = [];
-    x0 = x0.replace("~", "");
-    y0 = y0.replace("~", "");
-    z0 = z0.replace("~", "");
-    x1 = x1.replace("~", "");
-    y1 = y1.replace("~", "");
-    z1 = z1.replace("~", "");
-    x0 = (x0 === "") ? 0 : x0;
-    y0 = (y0 === "") ? 0 : y0;
-    z0 = (z0 === "") ? 0 : z0;
-    x1 = (x1 === "") ? 0 : x1;
-    y1 = (y1 === "") ? 0 : y1;
-    z1 = (z1 === "") ? 0 : z1;
+    x0 = x0.replace('~', '');
+    y0 = y0.replace('~', '');
+    z0 = z0.replace('~', '');
+    x1 = x1.replace('~', '');
+    y1 = y1.replace('~', '');
+    z1 = z1.replace('~', '');
+    x0 = (x0 === '') ? 0 : x0;
+    y0 = (y0 === '') ? 0 : y0;
+    z0 = (z0 === '') ? 0 : z0;
+    x1 = (x1 === '') ? 0 : x1;
+    y1 = (y1 === '') ? 0 : y1;
+    z1 = (z1 === '') ? 0 : z1;
     x0 = parseInt(x0, 10);
     y0 = parseInt(y0, 10);
     z0 = parseInt(z0, 10);
@@ -751,11 +751,11 @@ function getMultiRawCommand(x0, y0, z0, x1, y1, z1, prefix, space, suffix) {
                 currentX = i * space + xCenter;
                 currentY = j * space + yCenter;
                 currentZ = k * space + zCenter;
-                currentX = isXRelative ? ("~" + currentX) : currentX;
-                currentY = isYRelative ? ("~" + currentY) : currentY;
-                currentZ = isZRelative ? ("~" + currentZ) : currentZ;
-                currentCommand = prefix + currentX + " " + currentY + " " + currentZ + suffix;
-                tempCommandList.push(currentCommand)
+                currentX = isXRelative ? ('~' + currentX) : currentX;
+                currentY = isYRelative ? ('~' + currentY) : currentY;
+                currentZ = isZRelative ? ('~' + currentZ) : currentZ;
+                currentCommand = prefix + currentX + ' ' + currentY + ' ' + currentZ + suffix;
+                tempCommandList.push(currentCommand);
             }
         }
     }
@@ -765,14 +765,14 @@ function getMultiRawCommand(x0, y0, z0, x1, y1, z1, prefix, space, suffix) {
 function setBlockReorder(commandList) {
     var setBlockFormat = /(\/?setblock) (~?-?\d+|~) (~?-?\d+|~) (~?-?\d+|~) ([\w\d:]+)( \d+)?( replace| keep| destroy)?( [^\n\r]+)?/g;
     //Not sure the influence of block order in MC 1.16+
-    var lastBlock = ["26", "27", "28", "29", "31", "32", "33", "37", "38", "39", "40", "51", "55", "59", "63", "65", "66", "69", "70", "72", "75", "76", "77", "78", "96", "104", "105", "106", "111", "115", "127", "131", "141", "142", "143", "147", "148", "149", "150", "157", "171", "175"];
-    var finalBlock = ["6", "29", "33", "34", "36", "64", "68", "71", "81", "83", "92"];
+    var lastBlock = ['26', '27', '28', '29', '31', '32', '33', '37', '38', '39', '40', '51', '55', '59', '63', '65', '66', '69', '70', '72', '75', '76', '77', '78', '96', '104', '105', '106', '111', '115', '127', '131', '141', '142', '143', '147', '148', '149', '150', '157', '171', '175'];
+    var finalBlock = ['6', '29', '33', '34', '36', '64', '68', '71', '81', '83', '92'];
     var setblockCommandList = [];
     var otherCommandList = [];
 
     var specialRull = function(i, j, k) {
         var pos = k.position;
-        return (pos.isXRelative && pos.isYRelative && pos.isZRelative && (pos.x == 0) && (pos.z == 0) && (pos.y >= -2 && pos.y <= -1))
+        return (pos.isXRelative && pos.isYRelative && pos.isZRelative && (pos.x == 0) && (pos.z == 0) && (pos.y >= -2 && pos.y <= -1));
     }
     var isLastBlock = function(i) { return (lastBlock.indexOf(i) != -1); }
     var isFinalBlock = function(i) { return (finalBlock.indexOf(i) != -1); }
@@ -806,60 +806,60 @@ function setBlockReorder(commandList) {
         }
     }
     for (i = 0; i < setblockCommandList.length; i++) {
-        parsedSetblockCommandList.push(new ParsedSetBlockCommand(setblockCommandList[i]))
+        parsedSetblockCommandList.push(new ParsedSetBlockCommand(setblockCommandList[i]));
     }
-    temp = splitWithProperty(parsedSetblockCommandList, ["id"], [specialRull, "0"], null)
+    temp = splitWithProperty(parsedSetblockCommandList, ['id'], [specialRull, '0'], null);
     setSpecialCommandList = temp[0];
     setNonAirCommandList = temp.other;
     setAirCommandList = temp[1];
     /*handle for nonairblock start*/
-    temp = splitWithProperty(setNonAirCommandList, ["id"], [isLastBlock, isFinalBlock], null);
+    temp = splitWithProperty(setNonAirCommandList, ['id'], [isLastBlock, isFinalBlock], null);
     firstCommandList = temp.other;
     lastCommandList = temp[0];
     finalCommandList = temp[1];
-    reoderWithProperty(firstCommandList, ["position", "y"], "increase")
-    reoderWithProperty(lastCommandList, ["position", "y"], "increase")
-    reoderWithProperty(finalCommandList, ["position", "y"], "increase")
+    reoderWithProperty(firstCommandList, ['position', 'y'], 'increase');
+    reoderWithProperty(lastCommandList, ['position', 'y'], 'increase');
+    reoderWithProperty(finalCommandList, ['position', 'y'], 'increase');
     /*handle for nonairblock end*/
     /*handle for airblock start*/
-    reoderWithProperty(setAirCommandList, ["position", "y"], "decrease")
+    reoderWithProperty(setAirCommandList, ['position', 'y'], 'decrease');
     /*handle for airblock end*/
     /*handle for special block start*/
-    temp = splitWithProperty(setSpecialCommandList, ["id"], [0], null);
-    setSpecialAirCommandList = temp[0]
-    setSpecialNonAirCommandList = temp.other
-    reoderWithProperty(setSpecialAirCommandList, ["position", "y"], "increase")
-    reoderWithProperty(setSpecialNonAirCommandList, ["position", "y"], "increase")
+    temp = splitWithProperty(setSpecialCommandList, ['id'], [0], null);
+    setSpecialAirCommandList = temp[0];
+    setSpecialNonAirCommandList = temp.other;
+    reoderWithProperty(setSpecialAirCommandList, ['position', 'y'], 'increase');
+    reoderWithProperty(setSpecialNonAirCommandList, ['position', 'y'], 'increase');
     /*handle for special block end*/
-    finalParsedCommandList = setAirCommandList.concat(firstCommandList, lastCommandList, finalCommandList, setSpecialAirCommandList, setSpecialNonAirCommandList)
+    finalParsedCommandList = setAirCommandList.concat(firstCommandList, lastCommandList, finalCommandList, setSpecialAirCommandList, setSpecialNonAirCommandList);
     commandList.length = 0;
     for (i = 0; i < otherCommandList.length; i++) {
-        commandList.push(otherCommandList[i])
+        commandList.push(otherCommandList[i]);
     }
     for (i = 0; i < finalParsedCommandList.length; i++) {
-        commandList.push(finalParsedCommandList[i].original)
+        commandList.push(finalParsedCommandList[i].original);
     }
     return commandList;
 }
 
-function isRelative(pos) { return (pos.search("~") != -1) }
+function isRelative(pos) { return (pos.search('~') != -1); }
 
 function parsePos(pos) {
-    pos = pos.replace(/[~\s]+/g, "");
-    if (pos == "") { return 0; }
+    pos = pos.replace(/[~\s]+/g, '');
+    if (pos == '') { return 0; }
     return parseInt(pos, 10);
 }
 
 function ParsedSetBlockCommand(str) {
     var setBlockFormat = /(\/?setblock) (~?-?\d+|~) (~?-?\d+|~) (~?-?\d+|~) ([\w\d:]+)( \d+)?( replace| keep| destroy)?( [^\n\r]+)?/;
     var tempArray = str.match(setBlockFormat);
-    if (!tempArray) { throw new Error("Incorrect setblock command"); }
+    if (!tempArray) { throw new Error('Incorrect setblock command'); }
     this.original = str;
     this.position = new ParsedPosition(tempArray[2], tempArray[3], tempArray[4]);
     this.id = tempArray[5];
-    this.meta = tempArray[6] ? parseInt(tempArray[6].replace(/\s+/g, ""), 10) : 0;
-    this.method = tempArray[7] ? tempArray[7].substring(1) : "";
-    this.nbt = tempArray[8] ? tempArray[8].substring(1) : "";
+    this.meta = tempArray[6] ? parseInt(tempArray[6].replace(/\s+/g, ''), 10) : 0;
+    this.method = tempArray[7] ? tempArray[7].substring(1) : '';
+    this.nbt = tempArray[8] ? tempArray[8].substring(1) : '';
 }
 
 var ParsedPosition = function ParsedPosition(posX, posY, posZ) {
@@ -876,9 +876,9 @@ ParsedPosition.prototype.equalTo = function(obj) {
     return ((this.x === obj.x) && (this.y === obj.y) && (this.z === obj.z) && (this.isXRelative === obj.isXRelative) && (this.isYRelative === obj.isYRelative) && (this.isZRelative === obj.isZRelative));
 }
 
-var reoderWithProperty = function reoderWithProperty(objList, attr, method) { //method could be "increase" or "decrease" ,attr is a list of property name
-    if (typeof(attr) === "undefined") { throw new Error("property undefined"); }
-    if (!(method === "increase" || method === "decrease")) { throw new Error("undefined method"); }
+var reoderWithProperty = function reoderWithProperty(objList, attr, method) { //method could be 'increase' or 'decrease' ,attr is a list of property name
+    if (typeof(attr) === 'undefined') { throw new Error('property undefined'); }
+    if (!(method === 'increase' || method === 'decrease')) { throw new Error('undefined method'); }
     var current, next;
     var isDone;
     var i;
@@ -895,13 +895,13 @@ var reoderWithProperty = function reoderWithProperty(objList, attr, method) { //
                     next = (j == 0) ? objList[i + 1][attr[j]] : next[attr[j]];
                 }
             } catch (e) {
-                alert("Error happened during search for property\n" + e.stack);
+                alert('Error happened during search for property'+"\n"+e.stack);
                 throw e;
             }
-            if (typeof(current) !== "number" || typeof(next) !== "number") {
-                throw new Error("Property is not a number")
+            if (typeof(current) !== 'number' || typeof(next) !== 'number') {
+                throw new Error('Property is not a number')
             }
-            if (!(current === next) && ((current > next) === (method === "increase"))) {
+            if (!(current === next) && ((current > next) === (method === 'increase'))) {
                 temp = objList[i];
                 objList[i] = objList[i + 1];
                 objList[i + 1] = temp;
@@ -950,12 +950,12 @@ var splitWithProperty = function splitWithProperty(objectList, propertyList, mat
                 current = (j == 0) ? objectList[i][propertyList[j]] : current[propertyList[j]];
             }
         } catch (e) {
-            alert("Error happened during search for property\n" + e.stack);
+            alert('Error happened during search for property'+"\n"+e.stack);
             throw e;
         }
         try {
             for (j = 0; j < matchRullList.length; j++) {
-                if (typeof(matchRullList[j]) !== "function") {
+                if (typeof(matchRullList[j]) !== 'function') {
                     if (matchRullList[j] === current) {
                         splitedObjectList[j].push(objectList[i]);
                         isMatched = true;
@@ -971,7 +971,7 @@ var splitWithProperty = function splitWithProperty(objectList, propertyList, mat
                 splitedObjectList.other.push(objectList[i]);
             }
         } catch (e) {
-            alert("Error happened during match for rull\n" + e.stack);
+            alert('Error happened during match for rull'+"\n"+e.stack);
             throw e;
         }
     }
@@ -984,10 +984,10 @@ function switchMode() {
     var current = currentInputMode;
     var next = (current + 1) % inputModeCount;
     for (i = 0; i < inputBoxInfo[current].modeClass.length; i++) {
-        $("." + inputBoxInfo[current].modeClass[i]).fadeOut();
+        $('.' + inputBoxInfo[current].modeClass[i]).fadeOut();
     }
     for (i = 0; i < inputBoxInfo[next].modeClass.length; i++) {
-        $("." + inputBoxInfo[next].modeClass[i]).fadeIn();
+        $('.' + inputBoxInfo[next].modeClass[i]).fadeIn();
     }
     currentInputMode = next;
     resetInput();
@@ -997,12 +997,12 @@ function switchMode() {
 function getAllCommand() {
     var i = 0;
     var allCommand = []; {
-        $(".blockSet").each(function() {
-            allCommand.push(commandList[$(this).attr("id")]);
+        $('.blockSet').each(function() {
+            allCommand.push(commandList[$(this).attr('id')]);
         });
     }
-    $(".blockSetCollection").each(function() {
-        allCommand = allCommand.concat(commandCollectionList[$(this).attr("id")]);
+    $('.blockSetCollection').each(function() {
+        allCommand = allCommand.concat(commandCollectionList[$(this).attr('id')]);
     });
     return allCommand;
 }
@@ -1016,17 +1016,17 @@ function inputBoxOnSelect() {
     if (!inputBoxInfo[currentInputMode].isInputBoxEnabled[this.id]) {
         inputBoxEnable(this);
     }
-    $(this).removeClass("badFormat");
+    $(this).removeClass('badFormat');
 }
 
 function inputBoxOnBlur() {
-    if ($(this).val() === "") {
+    if ($(this).val() === '') {
         inputBoxDisable(this);
     }
 }
 
 function inputBoxOnkeyPress(event) {
-    $(this).removeClass("badFormat");
+    $(this).removeClass('badFormat');
     var keynum;
     if (window.event) {
         keynum = event.keyCode;
@@ -1038,7 +1038,7 @@ function inputBoxOnkeyPress(event) {
     if (keynum == 13) {
         $(this).blur();
         if (addBlockListenerAdapter()) {
-            $("#" + inputBoxInfo[currentInputMode].inputBoxIdList[0]).focus();
+            $('#' + inputBoxInfo[currentInputMode].inputBoxIdList[0]).focus();
         } else {
             $(this).focus();
         }
@@ -1053,7 +1053,7 @@ function onClickAddBlock() {
 function onClickGenerate() {
     var command = getFinalCommand();
     if (command) {
-        $("#commandText").text(command);
+        $('#commandText').text(command);
         return true;
     } else {
         return false;
@@ -1066,7 +1066,7 @@ function onClickSwitchMode() {
 
 //Check and Set Swap function
 function onClickSwapPos() {
-    $("#commandText").text('');
+    $('#commandText').text('');
     //Clear generated command
     commandList = {};
     commandCollectionList = {};
@@ -1086,9 +1086,9 @@ function onClickSwapPos() {
         var regexMode01 = /^\/?setblock ([\-\~\d]*) ([\-\~\d]*) ([\-\~\d]*) minecraft:(.*) (.*)/;
         var regexMode2 = /^Area\ \/setblock\ pos\:\(([\-\~\d,]*)\)\ \~\ \(([\-\~\d,]*)\)\ id\:([\[\w\]\=\,\!]*)(?:\ meta\:(\d+))?(?:\ NbtTag\:(.*))?/;
         var regexMode3 = /^RawCommand : (\w+)\ \(\(([\-\~\d,]*)\)\ \~\ \(([\-\~\d,]*)\)\ ,space\:(\d+)\)\ (.*)?/;
-        var MCBStorage = getValue("MCB", true);
-        for (var key in MCBStorage) {
-            multiBlock = MCBStorage[key].match(regexMode2);
+        var mcbStorage = getValue('MCB', true);
+        for (var key in mcbStorage) {
+            multiBlock = mcbStorage[key].match(regexMode2);
             if (multiBlock) {
                 pos0 = multiBlock[1].split(',', 3);
                 x = pos0[0];
@@ -1101,9 +1101,9 @@ function onClickSwapPos() {
                 pos1[0] = z;
                 pos1[2] = x;
                 position = pos0.concat(pos1);
-                appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), MCBStorage[key], false);
+                appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), mcbStorage[key], false);
             } else {
-                multiBlock = MCBStorage[key].match(regexMode3);
+                multiBlock = mcbStorage[key].match(regexMode3);
                 if (multiBlock) {
                     pos0 = multiBlock[2].split(',', 3);
                     x = pos0[0];
@@ -1116,20 +1116,20 @@ function onClickSwapPos() {
                     pos1[0] = z;
                     pos1[2] = x;
                     position = pos0.concat(pos1);
-                    appendCommandCollection(getMultiRawCommand(...position, multiBlock[1], multiBlock[4], multiBlock[5]), MCBStorage[key], false);
+                    appendCommandCollection(getMultiRawCommand(...position, multiBlock[1], multiBlock[4], multiBlock[5]), mcbStorage[key], false);
                 }
             }
             if (multiBlock == null) {
-                singleBlock = MCBStorage[key].match(regexMode01);
+                singleBlock = mcbStorage[key].match(regexMode01);
                 if (singleBlock) {
-                    x = singleBlock[1]+" ";
-                    y = singleBlock[2]+" ";
-                    z = singleBlock[3]+" ";
-                    singleBlock = 'setblock '+z+y+x+'minecraft:'+singleBlock[4]+" "+singleBlock[5];
+                    x = singleBlock[1]+' ';
+                    y = singleBlock[2]+' ';
+                    z = singleBlock[3]+' ';
+                    singleBlock = 'setblock '+z+y+x+'minecraft:'+singleBlock[4]+' '+singleBlock[5];
                     singleBlock = singleBlock.replace('rail ', 'rail[shape=east_west] ');
                     appendCommand(singleBlock, false);
                 } else {
-                    appendCommand(MCBStorage[key], false);
+                    appendCommand(mcbStorage[key], false);
                 }
             }
         }
@@ -1143,17 +1143,17 @@ var initInputBox = function initInputBox() {
     var i;
     var j;
     for (i = 0; i < inputModeCount; i++) {
-        $("." + inputBoxInfo[i].textClass)
-            .addClass("notEnabled")
+        $('.' + inputBoxInfo[i].textClass)
+            .addClass('notEnabled')
             .focus(inputBoxOnSelect)
             .blur(inputBoxOnBlur)
             .keypress(inputBoxOnkeyPress)
             .each(function() {
-                $(this).val(inputBoxInfo[i].inputBoxDisplayDefault[$(this).attr("id")]);
+                $(this).val(inputBoxInfo[i].inputBoxDisplayDefault[$(this).attr('id')]);
             });
         if (i != currentInputMode) {
             for (j = 0; j < inputBoxInfo[i].modeClass.length; j++)
-                $("." + inputBoxInfo[i].modeClass[j]).hide();
+                $('.' + inputBoxInfo[i].modeClass[j]).hide();
         }
     }
 
@@ -1165,33 +1165,33 @@ var initOutputBox = function initOutputBox() {
     var position;
     var regexMode2 = /^Area\ \/setblock\ pos\:\(([\-\~\d,]*)\)\ \~\ \(([\-\~\d,]*)\)\ id\:([\[\w\]\=\,\!]*)(?:\ meta\:(\d+))?(?:\ NbtTag\:(.*))?/;
     var regexMode3 = /^RawCommand : (\w+)\ \(\(([\-\~\d,]*)\)\ \~\ \(([\-\~\d,]*)\)\ ,space\:(\d+)\)\ (.*)?/;
-    var MCBStorage = getValue("MCB", true);
-    for (var key in MCBStorage) {
-        multiBlock = MCBStorage[key].match(regexMode2);
+    var mcbStorage = getValue('MCB', true);
+    for (var key in mcbStorage) {
+        multiBlock = mcbStorage[key].match(regexMode2);
         if (multiBlock) {
             pos0 = multiBlock[1].split(',', 3);
             pos1 = multiBlock[2].split(',', 3);
             position = pos0.concat(pos1);
-            appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), MCBStorage[key], key);
+            appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), mcbStorage[key], key);
         } else {
-            multiBlock = MCBStorage[key].match(regexMode3);
+            multiBlock = mcbStorage[key].match(regexMode3);
             if (multiBlock) {
                 pos0 = multiBlock[2].split(',', 3);
                 pos1 = multiBlock[3].split(',', 3);
                 position = pos0.concat(pos1);
-                appendCommandCollection(getMultiRawCommand(...position, multiBlock[1], multiBlock[4], multiBlock[5]), MCBStorage[key], key);
+                appendCommandCollection(getMultiRawCommand(...position, multiBlock[1], multiBlock[4], multiBlock[5]), mcbStorage[key], key);
             }
         }
         if (multiBlock == null) {
-            appendCommand(MCBStorage[key], key);
+            appendCommand(mcbStorage[key], key);
         }
     }
 }
 var initButton = function initButton() {
-    $("#addBlock").click(onClickAddBlock);
-    $("#generateCommand").click(onClickGenerate);
-    $("#switchMode").click(onClickSwitchMode);
-    $("#swap_x_z").click(onClickSwapPos);
+    $('#addBlock').click(onClickAddBlock);
+    $('#generateCommand').click(onClickGenerate);
+    $('#switchMode').click(onClickSwitchMode);
+    $('#swap_x_z').click(onClickSwapPos);
 };
 var initPage = function initPage() {
     initInputBox();
