@@ -857,7 +857,7 @@ function swapPosition(pos) {
     var checkPosRelative;
     checkPosRelative = pos.search('~');
     pos = parsePos(pos).toString();
-    pos = (pos.search('-') == -1) ? '-'+pos : pos;
+    pos = (pos.search('-') == -1) ? '-'+pos : pos.replace('-', '');
     return (checkPosRelative != -1) ? '~'+pos : pos;
 }
 
