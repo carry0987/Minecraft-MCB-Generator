@@ -1094,12 +1094,12 @@ function onClickSwapPos() {
                 x = pos0[0];
                 z = pos0[2];
                 pos0[0] = z;
-                pos0[2] = x;
+                pos0[2] = '-'+x;
                 pos1 = multiBlock[2].split(',', 3);
                 x = pos1[0];
                 z = pos1[2];
                 pos1[0] = z;
-                pos1[2] = x;
+                pos1[2] = '-'+x;
                 position = pos0.concat(pos1);
                 appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), mcbStorage[key], false);
             } else {
@@ -1109,12 +1109,12 @@ function onClickSwapPos() {
                     x = pos0[0];
                     z = pos0[2];
                     pos0[0] = z;
-                    pos0[2] = x;
+                    pos0[2] = '-'+x;
                     pos1 = multiBlock[3].split(',', 3);
                     x = pos1[0];
                     z = pos1[2];
                     pos1[0] = z;
-                    pos1[2] = x;
+                    pos1[2] = '-'+x;
                     position = pos0.concat(pos1);
                     appendCommandCollection(getMultiRawCommand(...position, multiBlock[1], multiBlock[4], multiBlock[5]), mcbStorage[key], false);
                 }
@@ -1125,7 +1125,7 @@ function onClickSwapPos() {
                     x = singleBlock[1]+' ';
                     y = singleBlock[2]+' ';
                     z = singleBlock[3]+' ';
-                    singleBlock = 'setblock '+z+y+x+'minecraft:'+singleBlock[4]+' '+singleBlock[5];
+                    singleBlock = 'setblock '+z+y+'-'+x+'minecraft:'+singleBlock[4]+' '+singleBlock[5];
                     singleBlock = singleBlock.replace('rail ', 'rail[shape=east_west] ');
                     appendCommand(singleBlock, false);
                 } else {
