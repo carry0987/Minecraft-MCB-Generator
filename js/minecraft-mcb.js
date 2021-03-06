@@ -856,8 +856,11 @@ function parsePos(pos) {
 function swapPosition(pos) {
     var checkPosRelative;
     checkPosRelative = pos.search('~');
-    pos = parsePos(pos).toString();
-    pos = (pos.search('-') == -1) ? '-'+pos : pos.replace('-', '');
+    pos = parsePos(pos);
+    if (pos != 0) {
+        pos = pos.toString();
+        pos = (pos.search('-') == -1) ? '-'+pos : pos.replace('-', '');
+    }
     return (checkPosRelative != -1) ? '~'+pos : pos;
 }
 
