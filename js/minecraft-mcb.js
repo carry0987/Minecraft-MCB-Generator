@@ -842,12 +842,23 @@ function setBlockReorder(commandList) {
     return commandList;
 }
 
+//Check position relative
 function isRelative(pos) { return (pos.search('~') != -1); }
 
+//Get only number of position
 function parsePos(pos) {
     pos = pos.replace(/[~\s]+/g, '');
     if (pos == '') { return 0; }
     return parseInt(pos, 10);
+}
+
+//Swap position for x and z
+function swapPosition(pos) {
+    var checkPosRelative;
+    checkPosRelative = pos.search('~');
+    pos = parsePos(pos);
+    pos = (pos.search('-') == -1) ? '-'+pos : pos;
+    return (checkPosRelative != -1) ? '~'+pos : pos;
 }
 
 function ParsedSetBlockCommand(str) {
@@ -1094,12 +1105,12 @@ function onClickSwapPos() {
                 x = pos0[0];
                 z = pos0[2];
                 pos0[0] = z;
-                pos0[2] = '-'+x;
+                pos0[2] = swapPosition(x);
                 pos1 = multiBlock[2].split(',', 3);
                 x = pos1[0];
                 z = pos1[2];
                 pos1[0] = z;
-                pos1[2] = '-'+x;
+                pos1[2] = swapPosition(x);
                 position = pos0.concat(pos1);
                 appendCommandCollection(getMultiSetBlockCommand(...position, multiBlock[3], multiBlock[4], multiBlock[5]), mcbStorage[key], false);
             } else {
@@ -1109,12 +1120,12 @@ function onClickSwapPos() {
                     x = pos0[0];
                     z = pos0[2];
                     pos0[0] = z;
-                    pos0[2] = '-'+x;
+                    pos0[2] = swapPosition(x);
                     pos1 = multiBlock[3].split(',', 3);
                     x = pos1[0];
                     z = pos1[2];
                     pos1[0] = z;
-                    pos1[2] = '-'+x;
+                    pos1[2] = swapPosition(x);
                     position = pos0.concat(pos1);
                     appendCommandCollection(getMultiRawCommand(...position, multiBlock[1], multiBlock[4], multiBlock[5]), mcbStorage[key], false);
                 }
@@ -1122,10 +1133,10 @@ function onClickSwapPos() {
             if (multiBlock == null) {
                 singleBlock = mcbStorage[key].match(regexMode01);
                 if (singleBlock) {
-                    x = singleBlock[1]+' ';
+                    x = singleBlock[1];
                     y = singleBlock[2]+' ';
                     z = singleBlock[3]+' ';
-                    singleBlock = 'setblock '+z+y+'-'+x+'minecraft:'+singleBlock[4]+' '+singleBlock[5];
+                    singleBlock = 'setblock '+z+y+swapPosition(x)+' minecraft:'+singleBlock[4]+' '+singleBlock[5];
                     singleBlock = singleBlock.replace('rail ', 'rail[shape=east_west] ');
                     appendCommand(singleBlock, false);
                 } else {
