@@ -856,7 +856,7 @@ function parsePos(pos) {
 function swapPosition(pos) {
     var checkPosRelative;
     checkPosRelative = pos.search('~');
-    pos = parsePos(pos);
+    pos = parsePos(pos).toString();
     pos = (pos.search('-') == -1) ? '-'+pos : pos;
     return (checkPosRelative != -1) ? '~'+pos : pos;
 }
