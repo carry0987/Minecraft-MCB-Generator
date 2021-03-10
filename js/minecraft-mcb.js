@@ -430,7 +430,7 @@ function addBlockCollection(id, inf) {
         .hide()
         .appendTo('#displayInput')
         .slideDown(200);
-    if (swapXZPos === true) { $('#'+id).addClass('blockSetSwap'); }
+    if (swapXZPos === true) { $('#'+id).addClass('blockCollectSetSwap'); }
     $('#displayInput').animate({ scrollTop: $('#' + id).offset().top }, 150);
 }
 
@@ -450,7 +450,7 @@ function addBlockCollectionHigh(id, inf) {
         .hide()
         .appendTo('#displayInput')
         .slideDown(200);
-    if (swapXZPos === true) { $('#'+id).addClass('blockSetSwap'); }
+    if (swapXZPos === true) { $('#'+id).addClass('blockCollectSetSwap'); }
     $('#displayInput').animate({ scrollTop: $('#' + id).offset().top }, 150);
 }
 

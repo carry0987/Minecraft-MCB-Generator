@@ -306,6 +306,9 @@
 .blockSetSwap {
     background: #f0ec8c;
 }
+.blockCollectSetSwap {
+    background: #ffc113;
+}
 /* Style for swap END */
 
 input {
